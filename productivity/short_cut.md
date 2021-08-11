@@ -16,7 +16,9 @@ cmd+option+click 转到implementation
 
 option+enter 显示组件的操作，生成test wrapper in Center(flutter)等等
 
-shift+enter 直接开启一个新行（不用移到行尾再enter了）
+shift+enter 在该行下直接开启一个新行（不用移到行尾再enter了）
+
+cmd+option+enter 在该行上直接开启一个新行（不用移到行尾再enter了）
 
 cmd+backspace 删除一行
 
