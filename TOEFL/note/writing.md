@@ -48,7 +48,7 @@
 - 不要搞错题型，有没有不要写成该不该
 - 不要推翻题目限制（背景，条件）
 
-## before writing（typing） 构思
+## before writing（typing）
 
 - Analyze topic and question type
 
@@ -162,4 +162,192 @@ Sharpen / acquire / obtain / attain / upgrade / hone skills	expertise  major-rel
 academic performance	score presentation report
 
 independence optimism persistence cooperation perseverance
+
+### 拆分法
+
+1. 选出题干中可以用来拆分的对象。（往往是名词）
+2. 确定拆分标准。程度/时间/领域/等级...
+3. 为拆分对象构思理由。
+4. 确定立场和文章结构。
+
+衍生：下定义（给形容词下定义，e.g. It is difficult for a teacher to be both popular and effective in helping students in learning ）
+
+### 单一类
+
+- 价值判断 找共同理由。
+- 现象证明 拆分法
+
+主题段结构：
+
+A+ A+ A+(optional)
+
+A+ A+ A-(though...but)
+
+### 比较类
+
+- 提及所有选项
+
+  找比较优势，人无我有，人有我优
+
+- 文章结构
+
+  - 抬高自己（每段都对比）
+  - 贬低对方（B-,A+）
+
+主体段结构
+
+#### 二选一
+
+A>B A>B A>B(optional)
+
+B- A+ （内容不能交叉，比如说B-对mental health有害，A+说对mental health有利）
+
+A>B A>B A-/b+ (though...but...)
+
+B- A+ A-(though...but...)
+
+#### 三选一
+
+三选一通常是有目的选择，`为了达到什么`，通常是比较方案。
+
+除了前面的共同理由，还可以从
+
+- 解决根本问题。address the root cause of （如果选项中有`话聊`，比如什么spend more time talking with children之类的，选择这个，因为想要解决问题，必须先搞清楚问题是什么，有话聊才能搞清楚问题是什么）
+- (B-, C-) unwanted / unexpected outcome
+- 可行性（time/money）
+- 覆盖范围（效果长期/短期，受益的群体大小）
+
+A>B A>C / A>B,C
+
+B- C-(可以用共同的弊端) A+（不能与前面的弊端重合）
+
+#### 现象比较（古今）
+
+从以下四个维度想理由
+
+- 科技发展
+
+  Internet
+
+  google search / video games / online shopping (amazon) / social media (twitter / facebook / instagram ) / online courses (coursera)
+
+  Money
+
+  income increase / 
+
+  本领域的科技突破 artificial intelligence machine learning ...
+
+- 环境污染
+
+  也不一定是污染，也可能是环境变好。
+
+- 观念扭转
+
+  prioritize  attach more importance to
+
+- 福利完善（政府政策）
+
+  government involvement
+
+  law / policy / program （举一些这些方面的具体事例）
+
+  investment / fund (free-interest loan / improve infrastructure)
+
+### 特殊类
+
+#### 绝对词
+
+- 按照单一类的写法写
+
+- 否定绝对词（因此一定是disagree）
+
+  结构
+
+  - 承认合理性（去掉绝对词下的合理性）
+  - 反驳绝对性（找反例，找弊端）
+
+#### TODO 类
+
+> In order to help children do well in school, parents should limit children's time spent on TV.
+>
+> 与价值判断的区别，不是问你是否要limit children's time spent on TV，而是在为了help children的前提下。
+
+找到 cause & effect
+
+> 上例：limit children's time spent on TV --> do well in school
+
+- 反驳cause，drawbacks of the cause
+- 反驳effect，does the cause necessarily lead to the effect?
+- 给出替代方案
+
+### conclusion
+
+三种分论点逻辑：
+
+- 利弊 A -> 好处 坏处
+- 因果
+- 现象本身
+
+## writing (typing)
+
+### introductory paragraph
+
+三句话
+
+- hook
+- paraphrase the topic
+- 表明立场
+
+#### background sentence
+
+- discuss theme-related 现象
+- discuss the importance / meaning of the theme (Recommended)
+
+**不要纠结、尽量general**
+
+<img src="./note_img/introductory_paragraph.jpg" style="zoom:30%;" />
+
+#### paraphrase the topic
+
+改写题目（抄一遍也行）
+
+- find synonym (Good but hard)
+
+- change sentence structure
+
+  改变句子主语
+
+  - n / pron
+  - formal subject (it is / there be) 形式主语
+  - gerund（doing） / infinitive（to do）
+
+借助反方的观点
+
+<img src="./note_img/use_opposite_point.jpg" style="zoom:30%;" />
+
+#### thesis statement
+
+<img src="./note_img/thesis_statement.jpg" style="zoom:33%;" />
+
+### body
+
+#### Topic sentence
+
+Not too specific,not too general.
+
+**Transition words + topic + controlling idea**
+
+Transition words:
+
+首先：To begin with / Initially / First of all / 
+
+其次：What's more / In addition / Furthermore
+
+最后：last but not least / Finally / Eventually
+
+两段式：For one thing... For another...
+
+Topic: 代词 / 指代替换   变换词性   同义词 / 近义词
+
+将topic写长的方法：
 
