@@ -12,6 +12,8 @@
 
 ### appropriate word choice
 
+> my [quizlet set](https://quizlet.com/_a2ed6u?x=1jqt&i=3tkgqs) of good phrases and sentences
+
 选词准确。
 
 1. 查 **搭配词典、英英词典**。
@@ -284,7 +286,7 @@ B- C-(可以用共同的弊端) A+（不能与前面的弊端重合）
 
 三种分论点逻辑：
 
-- 利弊 A -> 好处 坏处
+- 利弊 A -> 好处 / 坏处
 - 因果
 - 现象本身
 
@@ -339,7 +341,7 @@ Not too specific,not too general.
 
 Transition words:
 
-首先：To begin with / Initially / First of all / 
+首先：To begin with / Initially / First of all / First and foremost
 
 其次：What's more / In addition / Furthermore
 
@@ -347,7 +349,90 @@ Transition words:
 
 两段式：For one thing... For another...
 
-Topic: 代词 / 指代替换   变换词性   同义词 / 近义词
+Topic: 问题
 
-将topic写长的方法：
+为了避免重复：代词 / 指代替换   变换词性   同义词 / 近义词
 
+##### sentence structure
+
+<img src="./note_img/ts_structure.png" style="zoom:50%;" />
+
+##### make TS longer
+
+- 句型variety
+
+... is so adj when it comes to ...
+
+> Firstly, government funding for art is so necessary when it comes to creating more job opportunities.
+
+... hardly can ... without v-ing ...
+
+> Finally, hardly can students expand their horizons without traveling abroad.
+>
+> Finally, students can hardly expand their horizons without traveling aborad.
+
+- <del>废话</del>
+
+It goes without any doubt that ...
+
+It is an undeniable fact that ...
+
+We are always aware that ...
+
+Our society abounds with the example to demonstrate the viewpoint that ...
+
+#### details
+
+- example VS detail
+
+<img src="./note_img/detail_example.jpg" style="zoom:50%;" />
+
+- 方法
+
+  **对词语进行具象化展开**
+
+example:
+
+<img src="./note_img/expand_word.jpg" style="zoom:50%;" />
+
+What means *advanced transportation*, *Efficient* and *Comfortable* ?
+
+<img src="./note_img/expanded_word.png" style="zoom:50%;" />
+
+#### reasons & explanations
+
+> 细节——积累 范文书，google，综合写作的语料
+
+##### cause-effect pattern
+
+- one cause --- multiple effects
+  - step1 从TS中找到 A->B 的因果关系。
+  - step2 将B拆分为B1,B2 ... ,并构建A->B1,A->B2,A->B3的逻辑链。
+  - step3 start typing
+
+- multiple causes --- one effects
+
+  - step1 从TS中找到A->B的因果关系。
+  - step2 将A拆分为A1, A2, A3。并构建A1->B,A2->B,A3->B的逻辑链。
+  - step3 start typing
+
+- one cause --- one effect
+
+  - logic chain
+
+    利用逆推避免逻辑断层。
+
+  > Not Recommended，因为需要很长的逻辑链
+
+##### Compare & Contrast
+
+structrue
+
+- 1.TS   2.A->B  3.-A(多选的话，其他的选项)->-B  4.
+
+##### example
+
+将说理的核心环节具体化就成了example
+
+- strictions --> smart phone are prohibited during work time
+- fewer interruptions --> wouldn't be disturbed by messages,notifications or feeds on social media when preparing lessons
