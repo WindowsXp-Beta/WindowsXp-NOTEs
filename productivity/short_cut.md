@@ -48,3 +48,37 @@ ctrl+a 转到行首
 
 ctrl+e 转到行尾
 
+## macOS
+
+### Alfred
+
+cmd+space 打开alfred，搜索应用
+
+space+文件 搜索文件
+
+`open`+文件 打开文件
+
+`find`+文件 在finder中查找文件
+
+`translate` google translate {query}
+
+`google` google search {query}
+
+`clipboard` 打开剪贴板查看器
+
+`clear` 删除5min/15min的剪贴板
+
+`define` 使用apple dictionary 查找词语
+
+`itunes` 在alfred中打开itunes迷你播放器
+
+`trash` 打开废纸篓
+
+`emptytrash` 清空废纸篓
+
+shift 快速查看所选项目
+
+直接输入数学表达式便可以直接计算
+
+`= 高级数学函数` `=sin()`  `=cos()` `=log()`
+

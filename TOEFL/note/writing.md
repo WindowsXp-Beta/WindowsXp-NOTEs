@@ -305,6 +305,7 @@ B- C-(可以用共同的弊端) A+（不能与前面的弊端重合）
 - discuss theme-related 现象
 - discuss the importance / meaning of the theme (Recommended)
 
+
 **不要纠结、尽量general**
 
 <img src="./note_img/introductory_paragraph.jpg" style="zoom:30%;" />
