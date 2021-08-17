@@ -39,13 +39,27 @@
 - 词性
 - 是否及物
 
+## 语言输入
+
+language use >> 技巧
+
+**积累！！**
+
+范文书，外刊，[procon.org](https://www.procon.org)
+
+- step1 材料。
+- step2 内容结构。看TS，detail，example，explanation如何展开。
+- step3 语言 好词好句，记note。
+- step4 仿写。
+- step5 立刻刷题，**一例套多题**
+
 # independent writing
 
 - 要举例
 - 推荐字数 400
 - 段落安排4~5段
 
-### 不要离题
+**不要离题**
 
 - 不要搞错题型，有没有不要写成该不该
 - 不要推翻题目限制（背景，条件）
@@ -437,3 +451,57 @@ structrue
 
 - strictions --> smart phone are prohibited during work time
 - fewer interruptions --> wouldn't be disturbed by messages,notifications or feeds on social media when preparing lessons
+
+##### Conclusion
+
+拆因、拆果、对比。
+
+#### Concession & rebuttal
+
+> 增加word count，让development更完善。
+
+- 利用反方观点让步。
+
+- 要做转折，“以退为进”。
+
+- 语气削弱。适当展开。
+
+##### 方案一
+
+让步：自己的weakness，转折：solution。
+
+模板句：
+
+Admittedly, a minority of individuals tend to believe that ...
+
+This is because ... (同样要适当展开这个观点)
+
+However,this problem can be easily adddressed when / if ...
+
+##### 方案二
+
+让步：反方advantage，但是alternative。
+
+模板句：
+
+Admittedly, a minority of individuals tend to believe that ...
+
+However, such a goal can be achieved by using other methods,such as ...
+
+为了让逻辑更流畅，前两段尽量阐述对方观点的不足。
+
+##### 方案三
+
+> Not Recommended
+
+换个角度，找到对方说法的漏洞，错误，弊端。
+
+### concluding paragraph
+
+> 同样功能性>大于装饰性
+
+- linker
+- thesis statement（supporting idea / topic sentence）
+
+不要写新东西。
+
