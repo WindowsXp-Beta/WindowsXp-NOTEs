@@ -76,6 +76,48 @@ A/D
 
 <img src="./note_img/disagree_template.png" style="zoom:40%;" />
 
+#### 同意题回答模板
+
+时态与材料保持一致。
+
+<img src="./note_img/agree.png" style="zoom:50%;" />
+
+### Tips
+
+<img src="./note_img/listening_tips.png" style="zoom:45%;" />
+
+## TASK3
+
+1. reading 50' 对专有名词的抽象解释。
+2. listening 90'~110' 专有名词的具体例证。
+3. speaking 回答。P：30s R：60s
+
+### 阅读笔记
+
+阅读内容包括：background+definition+detail（顺序不一定固定，背景，细节解释信息可能缺失）
+
+笔记：标题首字母+（本质名词（optional））
+
+定义句（短，完整抄，长，速记）
+
+### 听力结构
+
+**无特定结构:cry:**
+
+- 关注分行合理性，逻辑符号添加。
+
+- 删减重复信息，无关信息（例证，引入部分尤为多见）。
+
+  <img src="./note_img/listening_task3_listenpartprior.png" style="zoom:50%;" />
+
+### 回答
+
+<img src="./note_img/listening_task3_respondtemplete.png" style="zoom:45%;" />
+
+### 双例证
+
+<img src="./note_img/listening_task3_doubleexp.png" style="zoom:50%;" />
+
 ## 笔记符号体系
 
 介词：with->w	without->w/	to->2	for->4	btw->between	ard->around	ab->about	fr->from
@@ -95,4 +137,20 @@ A/D
 ## 发音
 
 - 连词弱读：because，but，so，to等的元音发成 |ə|
+- a+s/m/f/n a要发成|æ| chance,can't,ask,after,advantage
+- 重读闭音节中的o |а| hot dog policy
+- 元音+t+元音 |t|->|d| latter
+- R 卷舌音
+- ile |l|not |ail| mobile fragile
 
+## Tip
+
+- 少用绝对化词汇，比如totally，always（替换成usually），no（替换成barely）等。
+
+- 不要用100%的语气。比如 he will do sth。使用would
+
+  > 英语中过去式会降低语气
+  >
+  > can——could may——might will——would
+  >
+  > I was wondering if I could (have a deadline extentsion)?
