@@ -106,7 +106,9 @@ A/D
 
 - 关注分行合理性，逻辑符号添加。
 
-- 删减重复信息，无关信息（例证，引入部分尤为多见）。
+- **删减重复信息，无关信息（例证，引入部分尤为多见）。IMPORTANT！！**
+
+- **要记到阅读对应的细节部分！！**
 
   <img src="./note_img/listening_task3_listenpartprior.png" style="zoom:50%;" />
 
@@ -114,9 +116,86 @@ A/D
 
 <img src="./note_img/listening_task3_respondtemplete.png" style="zoom:45%;" />
 
+> refers to 本质名词 + 定义句 的连接需要注意，要使用非谓语等形式，或者plan B ...,which means...
+>
+> **回答时注意时态！！**
+
 ### 双例证
 
 <img src="./note_img/listening_task3_doubleexp.png" style="zoom:50%;" />
+
+## task4
+
+1. listening 90s ~ 120s
+
+   讲座节选（学术性话题）1.现象 2.概述 3.理论
+
+2. speaking P:20s R:60s
+
+**仔细审题！！（题干）**
+
+两种材料结构
+
+### 横向结构(more than 90%)
+
+判断依据：看是否出现2个小主题？
+
+```
+	phenomenon / concept
+		/							\
+branch1					branch2 <---看这层
+	 |							 |
+example1				example2
+```
+
+#### 笔记结构
+
+<img src="./note_img/listening_horizontal_note.png" style="zoom:40%;" />
+
+- further explanation 注意和主旨的逻辑关系。
+- 来不及就不讲附加解释。
+
+#### 题干格式
+
+<img src="./note_img/listening_horizontal_question.png" style="zoom:50%;" />
+
+how = two ways that ...
+
+why = two reasons that ...
+
+#### 回答模板
+
+<img src="./note_img/listening_horizontal_question_answer.png" style="zoom:50%;" />
+
+**不要说全文主旨（但要记，原因见下）**
+
+> Problem:Using points and examples from the lecture, explain two strategies salespeople use to address customer concerns.
+>
+> One strategy salespeople use to address customer concerns is 非谓语 / 从句 + ...
+>
+> Another strategy salespeople use to address customer concerns is 非谓语 / 从句 + ...
+
+#### Tips
+
+<img src="./note_img/listening_horizontal_tips.png" style="zoom:50%;" />
+
+### 纵向结构
+
+```
+ hypothesis / concept
+ 				|
+ 				|
+ 				|
+experinmant / examples
+```
+
+<img src="./note_img/speaking_vertical_question.png" style="zoom:50%;" />
+
+#### 回答模板
+
+<img src="./note_img/speaking_vertical_answer.png" style="zoom:50%;" />
+
+- 对于concept类的题，跟task3采用一样的方法作答。
 
 ## 笔记符号体系
 
@@ -137,11 +216,22 @@ A/D
 ## 发音
 
 - 连词弱读：because，but，so，to等的元音发成 |ə|
+
 - a+s/m/f/n a要发成|æ| chance,can't,ask,after,advantage
+
 - 重读闭音节中的o |а| hot dog policy
+
 - 元音+t+元音 |t|->|d| latter
+
 - R 卷舌音
-- ile |l|not |ail| mobile fragile
+
+- ile `|l|`not `|ail|` e.g. mobile fragile
+
+- /s/ + t,p,k + 元音
+
+  "浊化" 变成`|d| |b| |g|`
+
+  stand sky spy discussion
 
 ## Tip
 

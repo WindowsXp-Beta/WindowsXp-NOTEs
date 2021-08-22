@@ -190,10 +190,10 @@ independence optimism persistence cooperation perseverance
 
 ### 单一类
 
-- 价值判断 找共同理由。
+- 价值判断 找公用理由。
 - 现象证明 拆分法
 
-主题段结构：
+主体段结构：
 
 A+ A+ A+(optional)
 
