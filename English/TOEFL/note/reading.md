@@ -18,7 +18,18 @@
   
 - 语法 [ref link](http://www.yingyuyufa.com/)
 
+哪些题型应当引起重视
+
+<img src="./note_img/reading_time_score.png" style="zoom:50%;" />
+
+
+
+### 精读
+
+查生词 —> 长难句 —> 概括段落 —> 选一些难的地方翻译（可录音）
+
 ## 事实信息题
+找到+看懂
 
 ### 定位
 
@@ -34,6 +45,12 @@
 
 **不是连连看，要记住问题跟定位词之间的关系**
 
+### 常见错误选项
+
+- 虚假比较 对比较级，比较警觉！！
+- 拼接信息
+- 答非所问
+
 ### 不可定位
 
 - 排除法：选项定位
@@ -42,7 +59,22 @@
 
   <img src="./note_img/analyze.png" style="zoom:40%;" />
 
+## 否定事实信息题
+
+信号词：EXCEPT NOT
+
+因为选项中正确信息较多，故多采用排除法，先读完题目及选项，再去原文中寻找。
+
+## 单词推断题
+
+> 以背为主，5s内解决
+
+- 认识单词
+- infer the meaning from the text
+
 ## 句子简化题
+
+结合句子主干+逻辑关系，结合排除法。
 
 - step1 找句子主干，有逻辑关系的话找找逻辑关系。 排除选项中主干or逻辑关系错的。
 
@@ -66,6 +98,8 @@
 看句子 ——> 待插入文章
 
 段落逻辑结构、上下文指代关系。
+
+先预判，再将句子带入。
 
 ### 指代线索
 
@@ -116,6 +150,51 @@ pron，which，others，another，both，the latter，the former，neither ... n
 
 - 段落的目的 ——> 段落首尾 topic sentence
 - 段落如何organized ——> 浏览整个段落的结构，不用读具体的example，factor的解释等等，把握结构即可。
+
+## 推断题
+
+信号词 infer / imply / suggest / indicate / mostly likely
+
+原文中没有明确答案
+
+题型：
+
+- 正向推理（类似事实信息题）
+- 反向推理（对比）
+- 联系上下文（举例，类比）
+- 排除法
+
+### 反向推理
+
+常用逻辑：a 或 b ——> 非 a 则 b
+
+时间对比：新老。
+
+已知现在（过去），问过去（现在），将情况取反。
+
+信号词：before, after, prior to, previously, later
+
+其它反义词：unlike, differ from, exception, unless / less common, although
+
+### 结构推理
+
+- 总分关系：个体类继承总体属性。 信号词：for example / instance, like, from A to B
+- 类比关系：like, likewise, equally, equivalent, the same as
+
+### 排除法
+
+读1~2句原文看一遍选项。
+
+## 总结题 & 表格题
+
+> 六选三与顺序、提交顺序等等无关
+
+错误选项：1.矛盾/未提及 2.细节/偏题（8%）
+
+**排序法**
+
+- 注意第一印象选项。并列情况时常针对后半句设置错误。
+- 先判断正误，再判断细节（信息占文章的比重）
 
 ## 逻辑引导词
 

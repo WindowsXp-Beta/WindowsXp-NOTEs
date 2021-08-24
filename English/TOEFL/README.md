@@ -41,6 +41,11 @@ ETS大数据
 
 raw score 4对应scaled score 25。也就是说你的两篇文章都要达到4分水平。
 
-## Ref
+## Ref Link
 
-- XDF 托福强化班
+- XDF 托福强化班（大部分笔记都基于此）
+- [托福口语26分养成记](https://shuiyuan.sjtu.edu.cn/t/topic/3321)
+- [2 周备考 TOEFL 109 经验分享](https://shuiyuan.sjtu.edu.cn/t/topic/16229)
+- [TOEFL GRE资料资源](https://jackwire.github.io)
+- [72-108！托福提分攻略全揭秘&新政首考体验&机构选择](https://github.com/Jackwire/Jackwire.github.io/blob/master/files/sugestions/toefl1.md)
+
