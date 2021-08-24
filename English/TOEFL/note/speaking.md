@@ -40,6 +40,83 @@
 
 - 逼格NO：不要那么formal，追求高级词汇，长难句，“从简！！”
 
+## TASK1
+
+Independent speaking
+
+- “一边倒”
+- 直线式逻辑 类似综合口语T2的听力部分逻辑
+- 举例子用 such as / like 不要for example
+
+### 观点构思
+
+- 一切以好想理由，好组织语言（避免专业词汇）为前提，而不是这个理由，立场是不是高大上。
+- 理由不要高大上，高立意，要通俗接地气，**贴近个人，贴近生活**。
+- 观点要general一些，方便说细节。
+
+### 常用构思
+
+- Angle1 **relationship / interpersonal stuff “人际”**
+  - socialize / make friends
+  - communicate / interact / cooperate
+  - improve relationship / friendship / kinship / term spirit
+- Angle2 **fun / relax**
+  - Have fun / enjoy 
+  - interest / curiousity
+  - relieve stress
+- Angle3 **Learn stuff**
+  - Learn skills / knowledge (academic / cultural info & facts)
+  - improve / lower learning efficiency / motivation
+  - learn lessons
+- Angle4 **Health**
+  - improve physical health / body condition
+  - prevent mental health problem(较严重) / keep good mentality
+  - security / personal safety
+- Angle5 **convenience**
+  - save time / save effort
+  - bring inconvenience
+  - readliy accessible / have access to ...
+- Angle6 **Money / Job**
+  - save money / economical / costly
+  - earn money / make profits
+  - find a decent job
+
+### 论证逻辑
+
+#### 原因解释
+
+Highly Recommended！！
+
+结果（主题，如果是利弊题，那就可以是advantage/disvantage）+ because 原因解释
+
+> e.g.
+>
+> Firstly,after retiring,old people can better enjoy the rest of their lives.Because they would have much more spare time to do things they're interested in.
+>
+> Firstly,the auditors may disrupt university students' learning environment.Because the auditing people may do things that are irrelevant to the class which may cause major distraction in class.
+
+#### 对比
+
+话题中存在对比对象时，especailly preference题
+
+**不要讲重复的东西，强迫自己说陈述句**
+
+<img src="./note_img/speaking_contrast.png" style="zoom:50%;" />
+
+#### 推导（向外）
+
+Not so recommended.主要用来说完了没话说的时候再补一句话。
+
+以主题句为前提继续推导可能的后果。
+
+<img src="./note_img/speaking_effect.png" style="zoom:50%;" />
+
+一般向外推一句即可，防止偏离主题过多。
+
+### 举例
+
+<img src="./note_img/speaking_examples.png" style="zoom:50%;" />
+
 ## TASK2
 
 1. reading 45' ~ 50' —— school's announcement & proposal in a letter
@@ -124,7 +201,7 @@ A/D
 
 <img src="./note_img/listening_task3_doubleexp.png" style="zoom:50%;" />
 
-## task4
+## TASK4
 
 1. listening 90s ~ 120s
 
@@ -183,9 +260,9 @@ why = two reasons that ...
 
 ```
  hypothesis / concept
- 				|
- 				|
- 				|
+ 				 |
+ 				 |
+ 				 |
 experinmant / examples
 ```
 
@@ -196,6 +273,8 @@ experinmant / examples
 <img src="./note_img/speaking_vertical_answer.png" style="zoom:50%;" />
 
 - 对于concept类的题，跟task3采用一样的方法作答。
+
+
 
 ## 笔记符号体系
 
@@ -244,3 +323,14 @@ experinmant / examples
   > can——could may——might will——would
   >
   > I was wondering if I could (have a deadline extentsion)?
+  
+- 机经——考前几天就练机经上的题——命中率20%
+
+- 偷听大法
+
+  1 听力考试结束后，剩3、4分钟不要立即提交，听考场内有无其他同学已经开始独立口语作答。
+
+  2 若没听到，还有机会 ↓
+
+  <img src="./note_img/speaking_unoffcial_skill.png" style="zoom:50%;" />
+
