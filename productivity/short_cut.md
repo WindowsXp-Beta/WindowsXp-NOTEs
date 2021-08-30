@@ -82,3 +82,8 @@ shift 快速查看所选项目
 
 `= 高级数学函数` `=sin()`  `=cos()` `=log()`
 
+## Ubuntu
+
+`ctrl+h` 在GUI下查看所有文件，包括`.file_name`开头的文件。
+
+`alt+tab` 切换应用。
