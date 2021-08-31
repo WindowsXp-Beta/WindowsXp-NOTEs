@@ -29,7 +29,7 @@
 - 俚语
 - ...
 
-### grammer
+### grammar
 
 - 大小写
 - 三单
@@ -319,7 +319,6 @@ B- C-(可以用共同的弊端) A+（不能与前面的弊端重合）
 - discuss theme-related 现象
 - discuss the importance / meaning of the theme (Recommended)
 
-
 **不要纠结、尽量general**
 
 <img src="./note_img/introductory_paragraph.jpg" style="zoom:30%;" />
@@ -358,7 +357,7 @@ Transition words:
 
 首先：To begin with / Initially / First of all / First and foremost
 
-其次：What's more / In addition / Furthermore
+其次：What's more / In addition / Furthermore / Moreover
 
 最后：last but not least / Finally / Eventually
 
@@ -396,6 +395,8 @@ We are always aware that ...
 
 Our society abounds with the example to demonstrate the viewpoint that ...
 
+**Well-developed=details+examples+reasons**
+
 #### details
 
 - example VS detail
@@ -406,7 +407,7 @@ Our society abounds with the example to demonstrate the viewpoint that ...
 
   **对词语进行具象化展开**
 
-example:
+e.g.
 
 <img src="./note_img/expand_word.jpg" style="zoom:50%;" />
 
@@ -445,7 +446,7 @@ structrue
 
 - 1.TS   2.A->B  3.-A(多选的话，其他的选项)->-B  4.
 
-##### example
+##### 怎么写example
 
 将说理的核心环节具体化就成了example
 
@@ -509,3 +510,61 @@ However, such a goal can be achieved by using other methods,such as ...
 
 # integrated writing
 
+- “阅读”与“听力”大概率两种关系：1.互反。2.问题与解决方案。
+- 阅读文章结构总分——一个开头段交代立场，三个主体段给出论点。
+- 字数150~225，多写不扣分
+
+Scoring rubrics:要点对应，按点给分。不能少信息！
+
+## 阅读
+
+三分钟大概可以每段读两遍。
+
+开头段：重点读首尾句，总结中心论点为**关于\*\*的三个\*\*** (reasons/solutions/benefits/arguments...)
+
+主体段：读论证细节，理解论证逻辑，思考听力可以在哪些方面反驳。
+
+阅读为听力服务，听力中听到和阅读重复的内容可以不记，听力取反即可。
+
+不要抄连续超过10个词（会被Erater怀疑没看懂文章）
+
+## 听力
+
+听力要记录细节！！包括：
+
+- 逻辑链
+
+- 例子
+
+- 数据
+
+  数字：论证观点的数字，年份等无关紧要的数据不用记。
+
+- 细节
+
+  平行结构，多个短例证，听不全，至少听两个，加 ‘some other 名词’。
+
+听力内容推荐写原文，推荐听到什么写什么。
+
+### 笔记
+
+斜着缩近，表示换句。
+
+逻辑符号敏感，可以自己加（比如因果，分层）。
+
+符号简写时间长可以训练，时间短尽量用本能。
+
+## essay template
+
+开头段：According to the reading material, the author presents the three reasons to prove that...... However,the [professor] in the listening argues that none of the reasons is convincing.
+
+The first/second/final reason mentioned by the author is that ......(写1.5句，1是阅读中的观点，0.5句是被听力中反驳的地方，逻辑链上的一环，原因，条件，结果等等).The professor(in the listening), however, argues that......
+
+主题段找两个点：
+
+- 解释+细节
+- 解释+例子
+- 分层
+- 对比
+- 解释+数据
+- （逻辑链）解释
