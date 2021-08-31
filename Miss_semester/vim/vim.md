@@ -13,7 +13,7 @@
 **type `esc` to switch from any mode to normal mode**
    - Insert: for inserting text
 **enter Insert mode with `i`**
-![](insertmode.png)
+<img src="./note_img/insertmode.png" style="zoom:70%;" />
       - i 当前光标的前面
       - a 当前光标的后面
       - o 当前光标的下一行

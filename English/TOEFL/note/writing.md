@@ -506,3 +506,6 @@ However, such a goal can be achieved by using other methods,such as ...
 不要写新东西。
 
 <img src="./note_img/writing_conclusion.png" style="zoom:50%;" />
+
+# integrated writing
+
