@@ -560,6 +560,16 @@ Scoring rubrics:要点对应，按点给分。不能少信息！
 
 The first/second/final reason mentioned by the author is that ......(写1.5句，1是阅读中的观点，0.5句是被听力中反驳的地方，逻辑链上的一环，原因，条件，结果等等).The professor(in the listening), however, argues that......
 
+### 一些模板的替换
+
+<img src="./note_img/writing_integrated_templete.png" style="zoom:50%;" />
+
+[黎老师综合写作模板](../写作/黎老师综合写作模板.md)
+
+- Additionally, the author points out that ...   The speaker, in contrast, mentions that ... 
+
+### 主体段要点
+
 主题段找两个点：
 
 - 解释+细节

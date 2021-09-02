@@ -202,7 +202,7 @@ pron，which，others，another，both，the latter，the former，neither ... n
 
 连接词：
 
-接原因：because / because of / in that / now that / due to / owing to / for / by / as
+接原因：because / because of / in that / now that / due to / owing to / for / by / as / since
 
 接结果：so / so ... that / therefore / hence
 
