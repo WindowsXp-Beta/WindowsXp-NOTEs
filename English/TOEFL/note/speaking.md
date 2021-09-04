@@ -292,6 +292,10 @@ experinmant / examples
 - $\downarrow$ 先后关系。
 - +并列关系。
 
+My symbol
+
+符号：hundreds/thousands of 几百/几k
+
 ## 发音
 
 - 连词弱读：because，but，so，to等的元音发成 |ə|
