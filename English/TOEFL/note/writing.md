@@ -129,6 +129,18 @@ crime rate / potential criminals / offenders carrying weapons / accident
 - Physical health: lead a sedentary life: obesity / stiff shoulders / pain in back & neck / sore neck / disease (coronary heart disease, diabetes) / (for children) bone & muscle development / fatigue / dry eyes
 - mental health (not think of something unhealthy): relieve & reduce stress & pressure / relax and unwind / recharge batteries
 
+others：
+
+undergo / experience stress and pressure
+
+alter one's stress level
+
+distract us from daily worries and concerns （忘却生活的烦恼）
+
+frustrate and disturb
+
+be overwhelmed by heavy workload**s**
+
 #### 效率与方便
 
 方便：
@@ -138,6 +150,10 @@ Convenient / convenience ( save time and energy / easy to access / accessible / 
 效率：
 
 Boost / enhance / maximize / raise / increase / improve efficiency & productivity / facilitate sth / doing sth
+
+other
+
+the trouble of commuting for a long distance 长距离通勤
 
 #### 经济与金钱
 
@@ -173,11 +189,15 @@ Know better about world	broaden one's horizon	better grasp / understanding of st
 
 技能：
 
-Sharpen / acquire / obtain / attain / upgrade / hone skills	expertise  major-related & soft skills: communication skills social skills people skills
+Sharpen / acquire / obtain / attain / upgrade / hone skills	expertise  major-related & soft skills: communication skills social skills interpersonal skills
 
 academic performance	score presentation report
 
 independence optimism persistence cooperation perseverance
+
+others:
+
+pursue a vocation based on his talent and interest
 
 ### 拆分法
 

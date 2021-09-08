@@ -28,6 +28,10 @@
 
 **流利度 & 语速 IMPORTANT！！**
 
+少重复！！停顿宁愿用拖音不要重复。跟读。
+
+pronunciation 跟siri对话。
+
 ### language use
 
 正确 > 合适 > 逼格NO
@@ -61,7 +65,7 @@ Independent speaking
   - communicate / interact / cooperate
   - improve relationship / friendship / kinship / term spirit
 - Angle2 **fun / relax**
-  - Have fun / enjoy 
+  - Have fun / enjoy
   - interest / curiousity
   - relieve stress
 - Angle3 **Learn stuff**
