@@ -24,6 +24,28 @@ cmd+backspace 删除一行
 
 cmd+d 复制一行
 
+### VSCode
+
+ctrl+Tab 文件之间切换
+
+cmd+P 搜索文件
+
+cmd+shift+f 全文搜索
+
+cmd+B 隐藏边栏
+
+cmd+enter 下方插入一行
+
+cmd+shift+enter 上方插入一行
+
+cmd+c/x 光标不选择时即复制/剪切一整行
+
+cmd+\ 向右分割
+
+ctrl - move backword
+
+ctrl shift - move forward
+
 ## terminal
 
 ### iterm2
