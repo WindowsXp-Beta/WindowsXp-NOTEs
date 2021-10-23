@@ -1,0 +1,7 @@
+## TPO 23 integrated writing
+
+According to the reading material, the author presents the three reasons to explain the decline of yellow cedar, However,the professor in the  listening argues that none of the reasons is convincing.
+The first  reason mentioned by the author is that insect parasites specifically the cedar bark beetle lead to yellow cedar decline. The professor in the  listening, however, argues that this kind of insects won't cause the  decline because health yellow cedar trees can resist them than other.  For example, there are chemical substances on central of their leaves  which is posion to the insects. Therefore, health yellow cedar won't  suffer and this kind of beetle will only kill those which are already  illed.
+The second reason mentioned by the author is that brown bears  claw at the cedars and weaken them. The professor in the listening,  however, argue that bears will only hurt some trees but the decline  happened on both the main land and islands. Although there are no bears  on those islands, yellow cedar on the islands still decline.
+The  final reason mentioned by the author is that the change in the timing of root growth from early spring into late winter have significant  consequences that growing roots suffer damage from partial freezing.  However, the professor in the listening, argues that it's not the cause  since many trees living in low altitude died. If it's the reason, there  will be more death in the high altitude while actually more trees die in the low altitude.
+

@@ -540,7 +540,7 @@ Scoring rubrics:要点对应，按点给分。不能少信息！
 
 三分钟大概可以每段读两遍。
 
-开头段：重点读首尾句，总结中心论点为**关于\*\*的三个\*\*** (reasons/solutions/benefits/arguments...)
+开头段：重点读首尾句，总结中心论点为**关于XX的三个XX** (reasons/solutions/benefits/arguments...)
 
 主体段：读论证细节，理解论证逻辑，思考听力可以在哪些方面反驳。
 
@@ -578,7 +578,7 @@ Scoring rubrics:要点对应，按点给分。不能少信息！
 
 开头段：According to the reading material, the author presents the three reasons to prove that...... However,the [professor] in the listening argues that none of the reasons is convincing.
 
-The first/second/final reason mentioned by the author is that ......(写1.5句，1是阅读中的观点，0.5句是被听力中反驳的地方，逻辑链上的一环，原因，条件，结果等等).The professor(in the listening), however, argues that......
+The first/second/final reason mentioned by the author is that ......(写1.5句，1是阅读中的观点，0.5句是被听力中反驳的地方，逻辑链上的一环，原因，条件，结果等等). The professor(in the listening), however, argues that......
 
 ### 一些模板的替换
 

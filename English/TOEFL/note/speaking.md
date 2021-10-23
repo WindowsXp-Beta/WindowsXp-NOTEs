@@ -121,6 +121,22 @@ Not so recommended.主要用来说完了没话说的时候再补一句话。
 
 <img src="./note_img/speaking_examples.png" style="zoom:50%;" />
 
+### Fiona 独立口语
+
+独立口语结构：
+
+Major Point
+
+Topic sentence  > That is because . . .
+
+Explanation > 
+
+Anecdate
+
+Comparison
+
+说出一句话，不可被拆分，不断问自己why
+
 ## TASK2
 
 1. reading 45' ~ 50' —— school's announcement & proposal in a letter
@@ -179,9 +195,15 @@ A/D
 
 笔记：标题首字母+（本质名词（optional））
 
+先扫标题，带着标题扫读原文（顺序阅读，不要不过意思的读），找到第一句带着标题的句子。
+
 定义句（短，完整抄，长，速记）
 
+之后的内容有时间就看。
+
 ### 听力结构
+
+记录**新信息**
 
 **无特定结构:cry:**
 
