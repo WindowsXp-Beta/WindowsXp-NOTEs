@@ -61,6 +61,26 @@ CxString string2 = 10;    // 这样是OK的, 为CxString预分配10字节的大�
 
 当一个类中有纯虚函数时，它就是一个抽象类，不可以定义抽象类的对象，但可以让指针指向抽象类。
 
+## 类型转换
+
+### string和各种type互转
+
+1. stringstream
+
+   ```cpp
+   stringstream ss;
+   ss << class_you_want_to_convert_to_string;
+   ss.str();
+   ```
+
+2. to_string
+
+   支持 int，unsigned，(unsigned) long，(unsigned) long long，float，(long) double转string。
+
+3. [std::stoi, std::stol, std::stoll](https://en.cppreference.com/w/cpp/string/basic_string/stol)
+
+   [std::stoul, std::stoull](https://en.cppreference.com/w/cpp/string/basic_string/stoul)
+
 ## C++ new feature
 
 ### auto
@@ -134,17 +154,75 @@ auto ptr = [](double x){return x*x;};//类型为std::function<double(double)>函
 
    标识函数的实现，这部分不能省略，但可以为空。
 
+### typeid
+
+对于定义了虚函数的基类，当基类指针指向它的派生类时，可以用typeid(*pointer)来检查该类的运行时类型。
+
+```c++
+class A{
+public:
+  virtual void show();
+};
+class B : public A{
+  void show() override;
+};
+int main(){
+  A* p;
+  B b;
+  p = &b;
+  cout << (typeid(*b) == typeid(B));//don't forget the *
+}
+//output will be 1
+```
+
+
+
+## namespace
+
+```c++
+namespace name1 {
+	//your code
+}
+//命名空间可以是不连续的，因此上面的代码可以是定义一个新的命名空间，也可以是为一个已有的命名空间增加元素
+
+//anonymous namespace
+//The “anonymous” namespace you have created will only be accessible within the file you created it in.
+namespace {
+  //your code
+}
+//调用某个名字空间下的函数
+name1::code;
+//下面这行将告诉编译器，之后的代码会使用指定名字空间
+using namespace name1;
+//也可以指定名字空间中的特定项
+using name1::fun1;
+```
+
 ## 标准库
+
+### std::iota
+
+### std::shuffle
+
+[How to shuffle a std::vector?](https://stackoverflow.com/questions/6926433/how-to-shuffle-a-stdvector)
+
+```c++
+#include <algorithm>
+#include <random>
+
+auto rng = std::default_random_engine {};
+std::shuffle(std::begin(cards_), std::end(cards_), rng);
+```
+
+**Make sure to reuse the same instance of `rng` throughout multiple calls to [`std::shuffle`](https://en.cppreference.com/w/cpp/algorithm/random_shuffle) if you intend to generate different permutations every time!**
 
 ### std::string
 
 `#include <string>`
 
-string 是c++
+string 是c++的字符串类。
 
-replace(size_t pos, size_t size, const string&)
-
-没有terminator
+string中没有terminator，即`\0`也可以是string的一部分。但是当使用`string(char c[])`来初始化一个string时，会按照`\0`作为终结符判断`c[]`的长度，`\0`之后的部分不考虑。
 
 ## Preprocessor
 
@@ -205,4 +283,5 @@ replace(size_t pos, size_t size, const string&)
 | `__FILE__` | This contains the current file name of the program when it is being compiled. |
 | `__DATE__` | This contains a string of the form month/day/year that is the date of the translation of the source file into object code. |
 | `__TIME__` | This contains a string of the form hour:minute:second that is the time at which the program was compiled. |
+| `__func__` | func                                                         |
 
