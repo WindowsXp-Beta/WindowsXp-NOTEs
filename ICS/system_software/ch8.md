@@ -2,9 +2,9 @@
 
 ## 异常分类
 
-<img src="../note_img_org/exception.png" style="zoom:50%;" />
+<img src="./note_img/exception.png" style="zoom:50%;" />
 
-<img src="../note_img_org/exception_zh.png" style="zoom:50%;" />
+<img src="./note_img/exception_zh.png" style="zoom:50%;" />
 
 - Trap是有意的异常，是执行系统调用（system call）的结果。
 - Interrupt的讨论见下。
@@ -15,7 +15,7 @@
 
 一些常见的系统调用
 
-<img src="../note_img_org/syscall.png" style="zoom:50%;" />
+<img src="./note_img/syscall.png" style="zoom:50%;" />
 
 使用`syscall n`来调用，实际过程中几乎没有必要这么做，对于大多数系统调用，标准c库提供了一组方便的包装函数。
 
@@ -79,7 +79,7 @@
 
 通知CPU的方式是通过向CPU芯片上的一个引脚发信号（不是这章里花了很多篇幅导论的signal，只是一个高电压信号而已），所以只需要一个高压电信号，CPU就可以把控制流从用户态切换到内核态（其实是调用中断处理程序）（实际上控制寄存器中有一个位来表示进程所处的模式）
 
-<img src="../note_img_org/handle_interrupt.png" style="zoom:50%;" />
+<img src="./note_img/handle_interrupt.png" style="zoom:50%;" />
 
 ##### Signal&Interrupt
 
@@ -91,7 +91,7 @@ Main idea: Signal is triggered by CPU. Interrupt is triggered by externally by c
 
 #### Context switch
 
-<img src="../note_img_org/when_to_context_switch.png" style="zoom:40%;" />
+<img src="./note_img/when_to_context_switch.png" style="zoom:40%;" />
 
 Q：比如一个While(1)的循环，是怎么被切出来的呢？
 
@@ -101,7 +101,7 @@ Q：调用read函数，这是一个慢系统调用，等待读写磁盘的时候
 
 A：见下图，磁盘读完的时候同样会触发中断，进入中断处理函数，然后回到之前调用read的进程。
 
-<img src="../note_img_org/read_switch.png" style="zoom:40%;" />
+<img src="./note_img/read_switch.png" style="zoom:40%;" />
 
 ### 进程状态
 
@@ -186,7 +186,7 @@ int execve(const char *filename, const char *argv[], const char *envp[]);
 
 linux信号
 
-<img src="../note_img_org/signal.png" style="zoom:50%;" />
+<img src="./note_img/signal.png" style="zoom:50%;" />
 
 ### 进程组
 
@@ -223,7 +223,7 @@ int setpgid(pid_t pid, pid_t pgid);//改变进程pid，成功返回0， 错误�
 
 ### 接受信号
 
-<img src="../note_img_org/receive_sig.png" style="zoom:45%;" />
+<img src="./note_img/receive_sig.png" style="zoom:45%;" />
 
 > Attention: 从**系统调用返回**或完成一次**context switch**
 >

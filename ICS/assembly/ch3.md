@@ -1,7 +1,7 @@
 GCC   ( _G_ UN _C_ ompiler _C_ ollection)
 ## compile
 
-<img src="../note_img_assembly/gcc.png" style="zoom:90%">
+<img src="./note_img/gcc.png" style="zoom:90%">
 
 ```bash
 gcc -E test.c > test-pp.c  #预处理，加入头文件，因为这一步不会生成新文件，所以要用一个新文件来存结果
@@ -18,27 +18,35 @@ gcc code1.o code2.o code3.o
 
 ### C类型大小
 
-<img src="../note_img_assembly/c_class.png" style="zoom:80%;">
+<img src="./note_img/c_class.png" style="zoom:80%;">
 
 > 何谓地址：一个 64 位的 _unsigned long_ ，指向内存中的一个位置。而这个位置存储着一个 _字节_ （1 byte = 8 bit）
 
 ### 寄存器
 
-<img src="../note_img_assembly/regesiter_int.png" style="zoom:80%;">
+<img src="./note_img/regesiter_int.png" style="zoom:80%;">
 
 ### 操作数格式
 
-<img src="../note_img_assembly/operaform.png" style="zoom:90%;" />
+<img src="./note_img/operaform.png" style="zoom:90%;" />
+
+> 基址和变址寄存器都必须是64位寄存器
 
 ### 数据传送
 
-<img src="../note_img_assembly/move.jpeg" style="zoom:67%;" />
+<img src="./note_img/move.jpeg" style="zoom:67%;" />
+
+源操作数：立即数，寄存器，内存。
+
+目的操作数：寄存器，内存。
+
+Some constraints:
 
 > movq只能以表示32位补码数字的立即数作为源操作数
 >
 > 传送指令两个操作数不能都指向内存位置
 
-<img src="../note_img_assembly/movsz.jpeg" style="zoom:50%;" />
+<img src="./note_img/movsz.jpeg" style="zoom:50%;" />
 
 > 之所以没有`movzlq`是因为零扩展使用`movl`即可
 >
@@ -50,19 +58,21 @@ gcc code1.o code2.o code3.o
 
 ### 算术与逻辑操作
 
-<img src="../note_img_assembly/calop.jpeg" style="zoom:60%;" />
+<img src="./note_img/calop.jpeg" style="zoom:60%;" />
 
-> leaq的第二个操作数是寄存器
+第一个操作数是立即数，寄存器or内存，第二个操作数是寄存器or内存。第二个操作数是内存时，算术操作会将值写会内存。
+
+leaq的第二个操作数是寄存器
 
 ### 控制
 
 #### 条件码
 
-<img src="../note_img_assembly/concode.png" style="zoom:80%">
+<img src="./note_img/concode.png" style="zoom:80%">
 
 > leaq指令不改变任何条件码，除此之外`算术与逻辑操作图`中展示的操作都会改变条件码
 
-<img src="../note_img_assembly/compare.png" style="zoom:70%">
+<img src="./note_img/compare.png" style="zoom:70%">
 
 > test %rax, %rax 用来比较%rax与0的大小关系。
 >
@@ -70,11 +80,11 @@ gcc code1.o code2.o code3.o
 
 #### 条件码设置字节0或1
 
-<img src="../note_img_assembly/set_concode.png" style="zoom:60%">
+<img src="./note_img/set_concode.png" style="zoom:60%">
 
 #### 条件码设置跳转
 
-<img src="../note_img_assembly/jump_concode.png" style="zoom:67%">
+<img src="./note_img/jump_concode.png" style="zoom:67%">
 
 ##### if-else
 
@@ -106,9 +116,9 @@ ve = else_expr;
 if(!t) v = ve;
 ```
 
-<img src="../note_img_assembly/cmov.png" style="zoom:67%">
-
 attention:该种方式存在漏洞，因为两个条件都会执行，具体事例见课本P148
+
+<img src="./note_img/cmov.png" style="zoom:67%">
 
 ##### 循环
 
@@ -180,7 +190,7 @@ update:
 
 不同的编程语言中，过程的形式多样：函数，方法，子例程，处理函数等等。
 
-<img src="../note_img_assembly/stack.png" style="zoom:50%" id="3-25" />
+<img src="./note_img/stack.png" style="zoom:50%" id="3-25" />
 
 #### 转移
 
@@ -194,7 +204,7 @@ update:
 
 x86-64最多可以使用寄存器传递6个参数
 
-<img src="../note_img_assembly/data_transfer.png" style="zoom:67%">
+<img src="./note_img/data_transfer.png" style="zoom:67%">
 
 若参数超过6个，则要使用栈进行参数传递 7 ~ n 个参数，即为<a href="#3-25">图3-25</a>中的参数 7 ~ n。
 
@@ -219,9 +229,9 @@ x86-64最多可以使用寄存器传递6个参数
 
 ### 数组
 
-`T E[N]//假设A的首地址为x_E`则：
+`T E[N]//假设E的首地址为x_E`则：
 
-<img src="../note_img_assembly/array.png" style="zoom:60%">
+<img src="./note_img/array.png" style="zoom:60%">
 
 #### 二维数组
 
@@ -229,7 +239,21 @@ x86-64最多可以使用寄存器传递6个参数
 
 `&D[i][j] = x_D + L(C·i+j)`
 
-### 结构( struct )
+#### 变长数组
+
+```c
+int var_ele(long n, int A[n][n], long i, long j) {
+  return A[i][j];
+}
+```
+
+参数n必须在参数`A[n][n]`之前，这样函数就可以计算数组的维度。
+
+### 结构( struct )&联合(union)
+
+编译器维护关于每个struct的类型的信息，指示每个字段（field）的字节偏移。
+
+各个字段的选取完全是在编译时处理的，机器代码不包含关于字段声明或字段名字的信息。
 
 `union`与`struct`的区别
 
@@ -246,13 +270,28 @@ union U3{
 }; 
 ```
 
-<img src="../note_img_assembly/diff_u_s.png" style="zoom:60%">
+<img src="./note_img/diff_u_s.png" style="zoom:60%">
+
+如果强制类型转换间将一个double转换成unsigned long，则两者的位表示会很不一样（除了double为0.0的情况），用union可以让两者具有一样的位表示（当然，这样两者的数值就不一样了）。
+
+```c
+unsigned long double2bits(double d) {
+  union {
+    double d;
+    unsigned long u;
+  } temp;
+  temp.d = d;
+  return temp.u;
+}
+```
+
+
 
 #### 数据对齐
 
 对齐原则：任何 _K_ 字节的基本对象的地址必须是 _K_ 的倍数。
 
-<img src="../note_img_assembly/align.png" style="zoom:70%">
+<img src="./note_img/align.png" style="zoom:70%">
 
 对于结构体来说，需要在元素之间插入空隙使得各元素满足对齐要求。且结构体的首地址也得满足一定要求使得首地址加上各元素偏移后使得各元素地址满足对齐要求。
 
