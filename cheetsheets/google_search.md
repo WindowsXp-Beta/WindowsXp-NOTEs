@@ -44,3 +44,9 @@ e.g. largest * in the world
 - cheatsheet
 - cookbook
 - awesome
+
+best practice / idiom
+
+do sth properly
+
+dash 破折号—
