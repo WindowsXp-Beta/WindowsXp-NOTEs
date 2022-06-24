@@ -64,6 +64,8 @@ cmd+c/x 光标不选择时即复制/剪切一整行
 
 cmd+\ 向右分割
 
+alt + \ 向下分割（my customize）
+
 ctrl - move backword
 
 ctrl shift - move forward
@@ -74,7 +76,7 @@ cmd+1,2,3... switch between spilted windows 1 is from left
 
 ctrl+G 跳转到某一行
 
-cmd + shift + `/` jump to matching bracket
+cmd + shift + \ jump to matching bracket
 
 ### Qt Creator
 

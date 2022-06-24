@@ -48,7 +48,7 @@ EXPOSE 指令用于记录应用所使用的网络端口。
 
 ENTRYPOINT 指令用于指定镜像以容器方式启动后默认运行的程序。
 
-CMD ["executable","param1","param2"]  执行命令
+CMD ["executable","param1","param2"]  执行命令(exec form)
 
 > Also：`CMD command param1 param2` (*shell* form)
 
@@ -56,7 +56,7 @@ CMD ["executable","param1","param2"]  执行命令
 
 ## manipulate
 
-> Many thanks to [Gun9niR's blog](https://gun9nir.me/posts/docker-bookstore-21-11-30/)
+> Many thanks to [Gun9niR's blog](https://gun9nir.dev/posts/docker-bookstore-21-11-30/)
 
 ### basic
 
@@ -66,13 +66,28 @@ CMD ["executable","param1","param2"]  执行命令
 
 #### docker Cli
 
+**refer to tldr**
+
 [docker ps](https://docs.docker.com/engine/reference/commandline/ps/)	list all containers(container id, image, command, ...)
 
-[docker exec](https://docs.docker.com/engine/reference/commandline/exec/)	Run a command in a running container   **you may refer to `tldr` for common usage**
+> only shows running containers, use `-a` to see all the containers
+
+[docker images](https://docs.docker.com/engine/reference/commandline/images/)  List images
+
+[docker exec](https://docs.docker.com/engine/reference/commandline/exec/)	Run a command in a running container 
+
+[docker start](https://docs.docker.com/engine/reference/commandline/start/) Start one or more stopped containers
+
+[docker stop](https://docs.docker.com/engine/reference/commandline/stop/) Stop one or more running containers
+
+[docker rm](https://docs.docker.com/engine/reference/commandline/rm/) Remove one or more containers
+
+[docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/) Remove one or more images
 
 From 1.13 docker has a Cli restructured which adds a command subcommand form.[official blog](https://www.docker.com/blog/whats-new-in-docker-1-13/#h.yuluxi90h1om)
 
 - docker run => docker container run
+- docker ps => docker container ls
 
 ### multiple-container app
 
