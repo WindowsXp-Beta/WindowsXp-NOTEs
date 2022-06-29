@@ -2,6 +2,78 @@
 
 > Since I claimed that I'm proficient in cpp in my CV, I should write a cpp note.
 
+## basic
+
+### 进制
+
+八进制（octal）以`0`开头
+
+16进制（hexadecimal）以`0x` or `0X`开头
+
+### 运算符优先级
+
+1. `* / %`
+
+2. `+ -`
+
+3. `>> <<`
+4. `< <= > >=`
+
+### 初始化数组
+
+```c++
+int array[5] = {0}// 所有元素初始化为0
+//类似可以
+bool myBoolArray[ARRAY_SIZE] = { false };
+char* myPtrArray[ARRAY_SIZE] = { nullptr };
+```
+
+对于class内的数组
+
+```c++
+class Something {
+ private:
+	int myArray[10];
+ public:
+	Something() : myArray { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 } {}
+```
+
+### 函数指针
+
+```c
+void fun(int a) {
+    printf("Value of a is %d\n", a);
+}
+void fun2(int a) {}
+void fun3(int a) {}
+int main() {
+    // 定义一个函数指针同样需要参数类型和返回值类型
+    void (*fun_ptr)(int) = &fun;
+    // 也可以直接使用函数名
+	void (*fun_ptr)(int) = fun;
+    /* The above line is equivalent of following two
+       void (*fun_ptr)(int);
+       fun_ptr = &fun;
+    */
+    // Invoking fun() using fun_ptr
+    (*fun_ptr)(10);
+   	// 定义一个函数指针数组
+    void (*fun_ptr_arr[])(int) = {fun, fun2, fun3};
+    (*fun_ptr_arr[i])(para);
+    return 0;
+}
+```
+
+### 变长参数
+
+> variadic function
+
+C: one fixed argument and then any number of arguments can be passed
+
+```c
+int function_name(data_type variable_name, ...);
+```
+
 ## 面向对象
 
 ### 继承
@@ -37,12 +109,12 @@ QMap[key] = class(index...);
 
 ```c++
 CxString(int size)  
-{  
-    _size = size;                // string的预设大小  
-    _pstr = malloc(size + 1);    // 分配string的内存  
-    memset(_pstr, 0, size + 1);  
-}  
-CxString string2 = 10;    // 这样是OK的, 为CxString预分配10字节的大小的内存  
+{
+    _size = size;                // string的预设大小
+    _pstr = malloc(size + 1);    // 分配string的内存
+    memset(_pstr, 0, size + 1);
+}
+CxString string2 = 10;    // 这样是OK的, 为CxString预分配10字节的大小的内存
 ```
 
 在编译的时候就会有一个缺省的转换操作:将该构造函数对应数据类型的数据转换为该类对象. 也就是说 "CxString string2 = 10;" 这段代码, 编译器自动将整型10转换为CxString类对象。
@@ -60,6 +132,43 @@ CxString string2 = 10;    // 这样是OK的, 为CxString预分配10字节的大�
 > 在派生类中重定义虚函数时，它的函数原型（包括返回类型，函数名，参数类型和参数个数必须与基类中的虚函数完全一致）
 
 当一个类中有纯虚函数时，它就是一个抽象类，不可以定义抽象类的对象，但可以让指针指向抽象类。
+
+### 类模板的友元函数
+
+方法一：
+
+```c++
+template<class T>
+class A{
+  template<class U>
+	friend A<U> foo(A<U> &a);
+};
+```
+
+坏处：所有foo的实例是所有A的实例的友元。
+
+比如`foo<int>`和`foo<double>`都是`A<int>`的友元。
+
+方法二：
+
+```c++
+template<class T> class A;
+template<class T> A<T> foo(A<T> &a);
+template<class T>
+class A {
+  friend A foo<T>(A &a);
+  //为什么不用在A后面加T，因为
+  //C++ assumes that any reference to that class is templated, so adding the <T> is redundant.
+};
+template<class T>
+A<T> foo(A<T> &a) {
+  //implementation
+}
+```
+
+这可以避免方法一的问题
+
+> In general, this is how template friend functions are done in best practices.
 
 ## 类型转换
 
@@ -81,7 +190,7 @@ CxString string2 = 10;    // 这样是OK的, 为CxString预分配10字节的大�
 
    [std::stoul, std::stoull](https://en.cppreference.com/w/cpp/string/basic_string/stoul)
 
-## C++ new feature
+## new feature
 
 ### auto
 
@@ -117,7 +226,7 @@ auto ptr = [](double x){return x*x;};//类型为std::function<double(double)>函
 [Ref-link](https://www.cnblogs.com/jimodetiantang/p/9016826.html)
 
 ```c++
-[函数对象参数] (操作符重载函数参数) mutable 或 exception 声明 -> 返回值类型 {函数体}
+[函数对象参数] (操作符重载函数参数) mutable 或 exception 声明 -> 返回值类型 {函数体
 ```
 
 1. 函数对象参数
@@ -175,6 +284,129 @@ int main(){
 //output will be 1
 ```
 
+### 智能指针
+
+> use after free, double-free, memory leak
+>
+> Why C++ doesn't have GC?
+>
+> - C++ is built for efficiency (GC has its overhead)
+
+#### RAII
+
+> Resource Acquisition is Initialization
+
+**Not a specific implementation, but a methodology.**
+
+The life cycle of resource = its corresponding object
+
+some example: 
+
+- std::lock_guard
+
+- a naive file handler class, release resource in deconstructor
+
+```c++
+class File_Struct {
+public:
+  File_Struct(char *file_name, char *mode) {
+    file_handle = fopen(file_name, mode);
+    if (!file_handle) error(...);
+  }
+  ~File_Struct() {
+    fclose(file_handle);
+  }
+private:
+  FILE file_handle;
+};
+```
+
+So we get "smart pointers":
+
+#### std::unique_ptr
+
+> with little to no（几乎没有） overhead over built-in pointers :smile:
+
+1. 自动delete管理的指针当
+   1. 他们自己（unique_ptr）destroy了。
+   2. 他们的值发生了变化通过1. assignment 2. unique_ptr::reset
+
+支持部分指针操作比如：*, ->, `[]` for array
+
+不支持指针的算术运算，只支持move assignment。
+
+> p1 = std::move(unique_ptr p)
+>
+> 转移pointer的ownership
+
+##### porperties
+
+- constructor
+
+  ```cpp
+  explicit unique_ptr (pointer p) noexcept;//from pointer
+  ```
+
+- `pointer get()`
+
+  get the pointer
+
+- 可以在 if() 中判断是否为空，等价于执行 get()!=nullptr
+
+- `pointer release()`
+
+  release所存储的pointer，返回指针的值并将本身unique_ptr置空
+
+- `void reset(pointer another_pointer)`
+
+  delete当前stored的pointer，然后take ownership of another_pointer
+
+  赋给一个新指针，应该使用reset
+
+- assignment  `=` 
+
+  只接受unique_ptr或者nullptr_t
+
+  如果为空（=nullptr_t）等价于 `reset(/* nothing */)`
+
+  不然，operator=(unique_ptr u)等价于
+
+  ```c++
+  reset(u.release());
+  get_deleter() = forward<deleter_type>(u.get_deleter());
+  ```
+
+  
+
+#### std::shared_ptr
+
+- A shared_ptr constructor: +1
+
+- A shared_ptr destructor: -1
+
+- Reaching 0: remove the objects
+
+
+
+#### std::make_unique
+
+new一个class T，返回`std::unique_ptr<T>`。
+
+```cpp
+class Vec3{
+public:
+  Vec3 (int a = 0, int b = 0, int c = 0) {
+    ...
+  }
+};
+std::unique_ptr<Vec3> v2 = std::make_unique<Vec3>(0,1,2);
+std::unique_ptr<Vec3[]> v3 = std::make_unique<Vec3[]>(5);	//返回五个元素的数组
+```
+
+[Advantages of using std::make_unique over new operator](https://stackoverflow.com/questions/37514509/advantages-of-using-stdmake-unique-over-new-operator)
+
+> currently not quite understand :cry:
+
 
 
 ## namespace
@@ -198,7 +430,23 @@ using namespace name1;
 using name1::fun1;
 ```
 
-## 标准库
+## keyword
+
+### noexcept
+
+> operator
+
+The `noexcept` operator performs a compile-time check that returns true if an expression is declared to not throw any exceptions.
+
+### override
+
+> specifier
+
+Specifies that a virtual function overrides another virtual function.
+
+
+
+## std
 
 ### std::iota
 
@@ -218,11 +466,310 @@ std::shuffle(std::begin(cards_), std::end(cards_), rng);
 
 ### std::string
 
+```c++
+size_t length() const noexcept;
+size_t size() const noexcept;//两者返回同样的值
+char& operator[] (size_t pos);
+const char& operator[] (size_t pos) const;//当pos为length时返回跟在最后一个字符后面的null character，当超出length时undefined behaviour
+char& at (size_t pos);
+const char& at (size_t pos) const;//当pos>=length时抛out_of_range
+void push_back (char c);
+char& back();
+const char& back() const;
+char& front();
+const char& front() const;
+```
+
 `#include <string>`
 
 string 是c++的字符串类。
 
 string中没有terminator，即`\0`也可以是string的一部分。但是当使用`string(char c[])`来初始化一个string时，会按照`\0`作为终结符判断`c[]`的长度，`\0`之后的部分不考虑。
+
+这与c的string有很大不同，根据[ref](https://stackoverflow.com/questions/47288881/are-c-constant-character-strings-always-null-terminated) C中string是
+
+> A *string* is a contiguous sequence of characters terminated by and including the first null character.
+
+```c
+char x[3] = "abc";
+char y[4] = "abc";
+char z[] = "abc";
+```
+
+x不是string，而只是个char数组，y和z都是string。所以c中的const string（或者叫字符串字面量）可以用`\0`来判断终止。
+
+### std::string_view
+
+c++17
+
+[ref link](https://www.learncpp.com/cpp-tutorial/an-introduction-to-stdstring_view/)
+
+每次新建一个std::string会复制一遍，这样就可以更改内容，但这样效率不高，且占空间。
+
+string_view提供了对一个在另外地方定义的string的view，你不可以修改它，这样也不会发生复制，修改原char[]后string_view也会发生改变。
+
+#### modify view
+
+- 你可以改变你想看到的内容
+  - remove_prefix 从左边开始去掉字符
+  - remove_suffix 从右边开始去掉字符
+
+#### Best practices
+
+Prefer `std::string_view` over `std::string` for read-only strings, unless you already have a `std::string`.
+
+## Struct
+
+C++中的struct和C中的有很大不同。C++中struct和class几乎是一样的。
+
+The *only* difference between a **struct** and **class** in C++ is the default accessibility of member variables and methods. In a **struct** they are public; in a **class** they are private. ——[struct vs class in C++](https://blogs.sw.siemens.com/embedded-software/2014/06/02/struct-vs-class-in-c/)
+
+## algorithm
+
+### reverse
+
+```c++
+//Reverse range
+//Reverses the order of the elements in the range [first,last).
+template <class BidirectionalIterator>
+	void reverse (BidirectionalIterator first, BidirectionalIterator last);
+```
+
+### accumulate
+
+```c++
+template <class InputIterator, class T, class BinaryOperation>
+   T accumulate (InputIterator first, InputIterator last, T init,
+                 BinaryOperation binary_op);
+```
+
+- 从first加到last **[first,last)** 再加上init。
+
+- 可以自定义BinaryOperation
+
+  比如：减：`std::minus<int>()`，自定义函数
+
+```c++
+int myfunction (int x, int y) {return x+2*y;}
+```
+
+### sort
+
+```c++
+template <class RandomAccessIterator, class Compare>
+  void sort (RandomAccessIterator first, RandomAccessIterator last, Compare comp);
+```
+
+- 默认升序
+
+- 自定义比较函数
+
+  ```c++
+  bool myfunction (int i,int j) { return (i<j); }
+  ```
+
+### binary_search
+
+```c++
+ForwardIterator lower_bound (ForwardIterator first, ForwardIterator last, const T& val);
+ForwardIterator lower_bound (ForwardIterator first, ForwardIterator last, const T& val, Compare comp);
+ForwardIterator upper_bound (ForwardIterator first, ForwardIterator last, const T& val);
+//返回lower bound\upper bound
+//默认用小于比较
+bool binary_search (ForwardIterator first, ForwardIterator last, const T& val);// 返回是否存在
+```
+
+## STL
+
+### iterator
+
+介绍stl中的两种迭代器：bidirectional iterators 和 random-access iterators。
+
+bidirectional iterator: It is to be noted that containers like **list, map, multimap, set and multiset** support bidirectional iterators.
+
+random-access iterators: It is to be noted that containers like **vector, deque** support random-access iterators.
+
+std::sort only supports random-access iterators. std::list has its own sort method——std::list::sort
+
+<img src="./note_img/iterator_hierarchy.png" style="zoom:50%;" />
+
+### std::next
+
+std::next(iterator, n)
+
+返回当前迭代器的第n个后继
+
+1. for random-access iterators, std::next use just operator, operator + or operator – for advancing. 
+2. Otherwise, the function uses repeatedly the increase or decrease operator (operator ++ or operator –-)
+
+### map
+
+operator[key] VS at(key)
+
+当key存在时两者效果相同，返回key对应的value的引用。
+
+当key不存在时，[]用value的默认构造函数构造一个新的value然后返回这个引用，at则抛出一个异常。
+
+### unordered_map
+
+```c++
+bool empty();//Test whether container is empty
+int size();//Return container size
+mapped_type& at ( const key_type& k );//返回的是引用，找不到throw out_of_range
+iterator find ( const key_type& k );//找不到返回unordered_map::end
+size_type count ( const key_type& k ) const;//计数指定的key
+iterator erase ( const_iterator position );
+iterator erase ( const_iterator first, const_iterator last );//根据迭代器删
+size_type erase ( const key_type& k );//根据key删
+pair<iterator,bool> insert ( const value_type& val );
+//iterator是新插入的或key相同的，bool表示是否插入成功
+//value_type是pair<const key_type,mapped_type>
+//insert(pair<., .>(p1, p2)) OR insert(make_pair(p1, p2)) OR use emplace
+pair<iterator,bool> emplace (Args&&... args);
+```
+
+1. 撞hash时使用开散列（hash bucket）
+
+2. 不同的编译器gcc，clang，MSCV使用的hash function不一样。
+
+3. map中元素的个数除桶的个数是load factor。
+
+   > By default, unordered_map containers have a `max_load_factor` of `1.0`.
+
+   当超过max_load_factor时会发生增加bucket的个数从而rehash。
+
+### set
+
+```c++
+pair<iterator,bool> insert (const value_type& val);
+pair<iterator,bool> insert (value_type&& val);
+void insert (initializer_list<value_type> il);
+size_type erase (const value_type& val);//返回被删去的元素个数
+iterator  erase (const_iterator position);
+iterator  erase (const_iterator first, const_iterator last);//返回被删去的最后一个元素的下一个元素
+const_iterator find (const value_type& val) const;
+iterator       find (const value_type& val);
+```
+
+### list
+
+```c++
+iterator erase (const_iterator position);
+iterator erase (const_iterator first, const_iterator last);//返回被删除的最后一个元素的下一个元素
+void push_front (const value_type& val);
+void push_front (value_type&& val);
+iterator begin() noexcept;
+const_iterator begin() const noexcept;//返回链表头的指针
+reference front();
+const_reference front() const;//返回list第一个元素的引用
+reference back();
+const_reference back() const;//返回list最后一个元素的引用
+iterator end() noexcept;
+const_iterator end() const noexcept;//返回最后一个元素的下一个元素！！！的迭代器
+void pop_back();//删除最后一个元素
+```
+
+### vector
+
+```c++
+std::vector<int> second(4, 100); // 4个100
+std::vector<int> third(second.begin(), second.end()); // 用另一个vector初始化
+std::vector<int> v(myints, myints+5);// 用数组初始化：int myints[] = {10,20,30,5,15};
+void resize (size_type n);
+void resize (size_type n, const value_type& val);
+void push_back (const value_type& val);
+void push_back (value_type&& val);
+void pop_back();
+iterator erase (const_iterator position);
+iterator erase (const_iterator first, const_iterator last);//删除的范围是[first, last)
+```
+
+```c++
+vector<vector<int>> v;
+v.push_back({1, 2, 3});/*RIGHT*/
+v.emplace_back({1, 2, 3});/*WRONG*/
+```
+
+### array
+
+```c++
+template <class T, size_t N> class array;
+at();
+front();
+back();
+size();
+max_size();
+empty();
+```
+
+
+
+### stack
+
+```c++
+bool empty() const;
+size_type size() const;
+reference top();
+const_reference top() const;
+void push (const value_type& val);
+void push (value_type&& val);
+template <class... Args> void emplace (Args&&... args);//用args构造一个新对象并push到栈顶
+void pop();
+```
+
+### queue
+
+```c++
+//构造函数e.g.
+queue<int> first;                 // empty queue
+queue<int, list<int> > third; // empty queue with list as underlying container
+std::queue<int> second (mydeck);       //mydeck是deque<int>(3, 100)可以用deque初始化
+std::queue<int,std::list<int> > fourth (mylist); // mylist是list<int>用list初始化需设置container为list
+size_type size();
+bool empty();
+void push();
+template <class... Args> void emplace (Args&&... args);
+void pop();
+reference& front();
+const_reference& front() const;//返回队列中的下一个元素（也是队列中最老的元素）
+reference& back();
+const_reference& back() const;//返回队列中最后一个元素（也是队列中最新的元素）
+```
+
+### priority_queue
+
+需要支持random access的容器作为internal container class，vector和deque都满足要求，默认if no container class is specified for a particular priority_queue class instantiation, the standard container vector is used.
+
+```c++
+std::priority_queue<int> second (myints,myints+4);// 使用数组初始化
+std::priority_queue<int, std::vector<int>, std::greater<int> >third (myints,myints+4);// 小顶堆（小顶堆是greater），默认是大顶（std::less）
+priority_queue (InputIterator first, InputIterator last, const Compare& comp, const Container& ctnr);// 因为有这个构造函数，所以其他线性容器初始化也是行的
+const_reference top() const;
+void push (const value_type& val);
+void push (value_type&& val);
+void pop();
+```
+
+## cctype
+
+```c++
+int isalnum ( int c );//是否是字母数字的
+int isalpha ( int c );//是否是字母的
+int isdigit ( int c );//是否是数字的
+int isupper ( int c );//是否是大写字母
+int islower ( int c );//是否是小写字母
+```
+
+```c++
+int toupper ( int c )
+int tolower ( int c );//转换成大（小）字母，没有对应字母，就不改变
+```
+
+## Thread
+
+### thread sleep
+
+`std::this_thread::sleep_for(std::chrono::milliseconds(20))`
 
 ## Preprocessor
 
@@ -285,3 +832,68 @@ string中没有terminator，即`\0`也可以是string的一部分。但是当使
 | `__TIME__` | This contains a string of the form hour:minute:second that is the time at which the program was compiled. |
 | `__func__` | func                                                         |
 
+## Exception
+
+### throw
+
+throw表达式接受一个参数，并且将这个参数传递给exception handler。
+
+```c++
+try {
+  // code here
+}
+catch (int param) { cout << "int exception"; }
+catch (char param) { cout << "char exception"; }
+catch (...) { cout << "default exception"; }
+```
+
+多个catch可以级联，只执行参数类型符合的。
+
+...表示这个handler会接受任何类型的exception。
+
+### 动态类型声明
+
+dynamic exception specifications：在函数声明后添加一个 `throw` specifier。但是现在已经deprecated in C++。
+
+```c++
+double myfunction (char param) throw (int);
+```
+
+如果没有返回int类型的exception，函数调用`std::unexpected()`，改函数的默认行为是调用terminate。
+
+## BUG REPORT
+
+1. 在遍历容器时修改容器需要注意。
+
+   1. LSM tree
+
+      ```c++
+      for (auto p = cacheList[line]->begin(); p != cacheList[line]->end(); p++) {
+          delete *p;
+          cacheList[Line]->erase(p);
+      }
+      ```
+
+      在删除迭代器后再对迭代器+1会导致不确定的行为。
+
+      其实erase会返回被删除迭代器下一个迭代器。
+
+      所以正确做法如下：
+
+      ```c++
+      for(auto p = cacheList[line]->begin(); p != cacheList[line]->end();){
+          delete *p;
+          p = cacheList[Line]->erase(p);
+      }
+      ```
+
+   2. Tiger Compiler lab7——Gc
+
+      ```c++
+      for (auto it : std::list list) {}
+      for (auto it : std::deque deque) {}
+      ```
+
+      对于list，在循环体中增加list循环会继续遍历。
+
+      但对于deque，循环体中增加的元素不会参与遍历。

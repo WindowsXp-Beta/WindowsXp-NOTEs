@@ -40,7 +40,13 @@ Journey of my English learning.
 
   peach: 30+28+24+28=110
 
-2021.2.26 Sat. 9:30 am. 西交利物浦GRE fighting！！！
+<del>2021.2.26 Sat. 9:30 am. 西交利物浦GRE fighting！！！</del>
+
+<del>2021.4.3 上海中学</del>
+
+> Thanks to covid-19(omicron to be specific)😇
+
+2021.7.24 上海中学 GRE fighting！！！
 
 ## vocabulary
 
