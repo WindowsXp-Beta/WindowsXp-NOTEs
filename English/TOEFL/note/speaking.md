@@ -245,10 +245,10 @@ A/D
 
 ```
 	phenomenon / concept
-		/							\
-branch1					branch2 <---看这层
-	 |							 |
-example1				example2
+		/			\
+branch1				branch2 <---看这层
+	 |					|
+example1			example2
 ```
 
 #### 笔记结构
@@ -286,9 +286,9 @@ why = two reasons that ...
 
 ```
  hypothesis / concept
- 				 |
- 				 |
- 				 |
+ 		|
+ 		|
+ 		|
 experinmant / examples
 ```
 

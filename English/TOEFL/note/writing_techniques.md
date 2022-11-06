@@ -66,7 +66,7 @@ e.g.
 
 ## 形容词短语作后置定语
 
-adj短语作后置定语，修饰前面的n，可以和定语从句互换。
+adj 短语作后置定语，修饰前面的n，可以和定语从句互换。
 
 e.g. The qualities significant in applying for careers have been valued and highlighted currently.
 
@@ -91,7 +91,13 @@ e.g. She said the sun rises from the east.
 
 ## 主谓一致
 
+- 名词从句，动名词短语，动词不定式短语做主语时，用单数谓语。
+
 - 仅一个un（不可数名词）或to do或doing, 谓语单数；但用and并列，谓语复数。
+
+### 并列主语与谓语动词形式关系
+
+and连接的多个成分，若表示一种事物或概念时，用单数动词；若表示的是多个不同概念时，则用复数动词。
 
 ### 就近原则
 
@@ -185,6 +191,12 @@ e.g. In front of computers sits a student.
 - 在从句中用一般现在时表示将来
 
   I will speak to him when he arrives. NOT ... when he will arive
+  
+- 从句过去时，主语时态取决于发生在从句之前or之后
+
+  When I got there, he had left. //到的时候已经走了
+
+  When I got there, he left. //到了之后才走
 
 ### 条件状语从句
 
@@ -192,7 +204,7 @@ e.g. In front of computers sits a student.
 
   If it rains tomorrow, I will take my umbrella.
 
-# 如何长难句
+# 如何写长难句
 
 ## 句子开头
 
@@ -340,7 +352,7 @@ more examples:
 
 ## 巧用插入语
 
-[基本概念](##插入语)
+[基本概念](#插入语)
 
 ## 同位语
 
@@ -350,6 +362,6 @@ n1, n2
 
 e.g. Choosing organic food, another method conductive to our environment, can be easily achieved by each citizen.
 
-Success, the objective everyone strives for, can be achieved by perseverance and diligence.ß
+Success, the objective everyone strives for, can be achieved by perseverance and diligence.
 
 e.g. Willingness to accept others' ideas, therefore, will help people win the support and assistance from them, the core contributors to success.
