@@ -67,7 +67,7 @@ Why we need Virtual Memory?
 
 VPN作为查询页表的index，比如一个虚地址的VPN是0x0f，那么对应的页表项就是`Table[15]`。
 
-### page Hit
+### page hit
 
 <img src="./note_img/page_hit_process.png" style="zoom:50%;" />
 
@@ -120,6 +120,28 @@ TLB是页表的一部分，每个进程的页表是不一样的，切换进程�
 
 <img src="./note_img/translate_process.png" style="zoom:50%;" />
 
+### 多级页表PTE
+
+> From OS lab2
+
+<img src="./note_img/translate_process_armv8.png" style="zoom:67%;" />
+
+多级页表每个页表项8bytes，armv8（**页表项从0开始**）的1级，2级页表项当该页表项指向物理块时（即大页）结构如下：
+
+<img src="./note_img/el012_armv8.png" style="zoom:80%;" />
+
+当以4kb为粒度时，level 1的n是30。
+
+物理地址48位，level1是30\~38bit，所以0\~29bit都是offset，即取L2，L3，业内偏移合成大页的offset。
+
+所以输出的物理地址只要30\~48位
+
+armv8的0，1，2级页表当页表项指向下一级页表时结构如下：
+
+<img src="./note_img/PTE_point2table.png" style="zoom:90%;" />
+
+以4kb为粒度时，m=12，因为根据CSAPP p578，与OS lab2的代码：`u64 boot_ttbr0_l0[PTP_ENTRIES] ALIGN(PTP_SIZE);// PTP_SIZE is 4096`,物理页表要求4kb对齐。所以0\~11页为0。
+
 ## Linux虚拟内存系统
 
 区域（段）：区域是已经存在着的虚拟内存的连续片。
@@ -146,6 +168,56 @@ e.g. 代码段，数据段，堆，共享库，用户栈
 > COW stands for copy on write
 
 <img src="./note_img/cow_process.png" style="zoom:50%;" />
+
+## page fault handler
+
+当发生page fault时，应该从磁盘上的哪里找到响应的数据填到内存里呢？
+
+学ICS的时候，认为如果最后一级页表项如果是invalid的。那么就存着磁盘上的页表位置。实际上CSAPP上确实是这么画的：
+![](./note_img/L3PTE.png)
+
+但至于到底怎么用63个bit来保存磁盘上的位置就没有说明。
+
+OS课上，海波说OS还要记录物理页的信息（也就是chcore中的pmobject），我觉得十分不解，不是仅依靠页表就可以处理page fault了吗？为啥还要记录物理信息呢？充其量只要用一个bitmap，看哪些物理页空着就行。
+
+chcore解答了我的问题，不知道你有没有注意到上面这种图里，磁盘上的页表位置前面那句话：OS可用。这意味着这是一个完全可以由软件来解决的问题（实际上也确实如此，毕竟page fault handler是OS写的😂）。所以chcore选择的方案是：不用页表，而是用VMA。chcore的VMA（vmregion）是这样的：
+
+```c
+struct vmregion {
+        struct list_head node; /* vmr_list */
+        vaddr_t start;
+        size_t size;
+        vmr_prop_t perm; // permission
+        struct pmobject *pmo;
+};
+```
+
+其中`pmobject`是这样的：
+
+```c
+struct pmobject {
+        struct radix *radix; /* record physical pages */
+        paddr_t start;
+        size_t size;
+        pmo_type_t type;
+}
+```
+
+可见虚拟地址到物理地址的映射关系已经在其中体现了：va即为vmregion中的`start`到`start+size`，pa即为pmobject中的`start`到`start+size`。
+
+一个新进程（cap_group）的页表（vmspace中的pgtbl项）是这么建立的——给elf文件每一个要load的段建立一个pmobject，从disk上把这些段copy到内存里，将这些pmobject加入vmpace，这个过程如下：
+
+1. 建立vmregion（start address由elf决定）
+
+2. 根据上面提到的vm和pm的对应关系填写页表
+
+   对于demand paging的页，不填写（因为内存中还没有）
+
+   > Q : 那么一级二级页表为什么也不填呢？
+   >
+   > A : 因为我们有VMA，所以只需要知道这个va，就可以通过范围来知道它属于哪个VMA，从而知道如何处理它。
+
+总结：正如PPT中的一个提问：如果所有的页都立刻获取，是不是可以不需要VMA了？答案是是的，因为对于虚拟内存和物理内存映射，VMA和页表的功能是有overlap的。但VMA可以让我们更好的管理虚拟内存（毕竟是软件，灵活度更高），所以我们还是使用VMA。
 
 ## Dynamic memory Allocation
 
@@ -323,4 +395,3 @@ Con: 插入需要搜索。
 free：
 
 释放一个块时，执行合并，并将结果放置到对应的空闲链表中。
-

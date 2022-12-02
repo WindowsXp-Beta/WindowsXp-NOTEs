@@ -2,7 +2,7 @@
 
 > my gdb cheetsheet
 >
-> ref: [gdb tutorial](http://www.unknownroad.com/rtfm/gdbtut/gdbtoc.html) gdb-notes-x86-64
+> ref: [gdb tutorial](http://www.unknownroad.com/rtfm/gdbtut/gdbtoc.html) [gdb-notes-x86-64](./gdbnotes-x86-64.pdf)
 
 ## breakpoint
 

@@ -89,6 +89,20 @@ From 1.13 docker has a Cli restructured which adds a command subcommand form.[of
 - docker run => docker container run
 - docker ps => docker container ls
 
+### volume
+
+1. bind
+2. volume
+
+The following picture describes the differences clearly
+
+![](/Users/weixinpeng/git-repos/NOTE_github/cheetsheets/docker.assets/types-of-mounts-volume.png)
+
+I use bind mount most time, and there are something you should remember
+
+1. you don't need to create the mounting folder in the container if it doesn't exist since mount will create it for you
+2. `-v` and `--mount` are two equivalent flags, for equivalent I mean their usages are different but the effects are same
+
 ### multiple-container app
 
 > using docker-compose
