@@ -6,6 +6,8 @@
 
 ### Intellij IDEA
 
+> 安装VSCode Keymap
+
 cmd+shift+f 全文搜索
 
 shift+shift 文件搜索
