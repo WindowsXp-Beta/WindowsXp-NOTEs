@@ -192,35 +192,6 @@ A<T> foo(A<T> &a) {
 
 ## new feature
 
-### auto
-
-[Ref-link](https://blog.csdn.net/xiaoquantouer/article/details/51647865)
-
-声明变量时根据**变量初始值的类型**自动为此变量选择类型。
-
-```c++
-auto f = 3.14;  //double
-auto s("hello");  //const char*
-auto z = new auto(9);  //int *
-auto x1 = 5, x2 = 5.0, x3 = 'r';   //错误，必须是初始化为同一类型
-```
-
-不建议为这么简单的变量声明使用auto，而应该清晰写出其类型。
-
-应该使用在**拥有复杂类型变量声明**时来**简化代码**。
-
-```c++
-std::vector<int>::iterator p = vec.begin();
-/* 变为如下 */
-auto p = vec.begin();
-```
-
-还可以保存lambda表达式类型的对象声明
-
-```c++
-auto ptr = [](double x){return x*x;};//类型为std::function<double(double)>函数对象
-```
-
 ### lambda表达式
 
 [Ref-link](https://www.cnblogs.com/jimodetiantang/p/9016826.html)
@@ -284,131 +255,6 @@ int main(){
 //output will be 1
 ```
 
-### 智能指针
-
-> use after free, double-free, memory leak
->
-> Why C++ doesn't have GC?
->
-> - C++ is built for efficiency (GC has its overhead)
-
-#### RAII
-
-> Resource Acquisition is Initialization
-
-**Not a specific implementation, but a methodology.**
-
-The life cycle of resource = its corresponding object
-
-some example: 
-
-- std::lock_guard
-
-- a naive file handler class, release resource in deconstructor
-
-```c++
-class File_Struct {
-public:
-  File_Struct(char *file_name, char *mode) {
-    file_handle = fopen(file_name, mode);
-    if (!file_handle) error(...);
-  }
-  ~File_Struct() {
-    fclose(file_handle);
-  }
-private:
-  FILE file_handle;
-};
-```
-
-So we get "smart pointers":
-
-#### std::unique_ptr
-
-> with little to no（几乎没有） overhead over built-in pointers :smile:
-
-1. 自动delete管理的指针当
-   1. 他们自己（unique_ptr）destroy了。
-   2. 他们的值发生了变化通过1. assignment 2. unique_ptr::reset
-
-支持部分指针操作比如：*, ->, `[]` for array
-
-不支持指针的算术运算，只支持move assignment。
-
-> p1 = std::move(unique_ptr p)
->
-> 转移pointer的ownership
-
-##### porperties
-
-- constructor
-
-  ```cpp
-  explicit unique_ptr (pointer p) noexcept;//from pointer
-  ```
-
-- `pointer get()`
-
-  get the pointer
-
-- 可以在 if() 中判断是否为空，等价于执行 get()!=nullptr
-
-- `pointer release()`
-
-  release所存储的pointer，返回指针的值并将本身unique_ptr置空
-
-- `void reset(pointer another_pointer)`
-
-  delete当前stored的pointer，然后take ownership of another_pointer
-
-  赋给一个新指针，应该使用reset
-
-- assignment  `=` 
-
-  只接受unique_ptr或者nullptr_t
-
-  如果为空（=nullptr_t）等价于 `reset(/* nothing */)`
-
-  不然，operator=(unique_ptr u)等价于
-
-  ```c++
-  reset(u.release());
-  get_deleter() = forward<deleter_type>(u.get_deleter());
-  ```
-
-  
-
-#### std::shared_ptr
-
-- A shared_ptr constructor: +1
-
-- A shared_ptr destructor: -1
-
-- Reaching 0: remove the objects
-
-
-
-#### std::make_unique
-
-new一个class T，返回`std::unique_ptr<T>`。
-
-```cpp
-class Vec3{
-public:
-  Vec3 (int a = 0, int b = 0, int c = 0) {
-    ...
-  }
-};
-std::unique_ptr<Vec3> v2 = std::make_unique<Vec3>(0,1,2);
-std::unique_ptr<Vec3[]> v3 = std::make_unique<Vec3[]>(5);	//返回五个元素的数组
-```
-
-[Advantages of using std::make_unique over new operator](https://stackoverflow.com/questions/37514509/advantages-of-using-stdmake-unique-over-new-operator)
-
-> currently not quite understand :cry:
-
-
-
 ## namespace
 
 ```c++
@@ -444,7 +290,73 @@ The `noexcept` operator performs a compile-time check that returns true if an ex
 
 Specifies that a virtual function overrides another virtual function.
 
+### constexpr
 
+[tutorial](https://www.geeksforgeeks.org/understanding-constexper-specifier-in-cpp/)
+
+doing computations at compile time rather than run time
+
+1. constexpr function should refer only to constant global variables.
+2. constexpr function can call only other constexpr functions not simple functions.
+
+Restrictions on constructors that can use constexpr:
+
+- No virtual base class
+- Each parameter should be [literal](https://www.geeksforgeeks.org/types-of-literals-in-c-c-with-examples/)
+- It is not a try block function
+
+### using
+
+1. Bring all members from the namespace into the current scope.
+
+    ```c++
+    using namespace std;
+    ```
+
+2. bring a specific member from the namespace into the current scope
+
+    ```c++
+    using std::cout;
+    using std::endl;
+    ```
+
+3. Bring a base class method or variable into the current class’s scope.
+
+    ```c++
+    struct B
+    {
+        virtual void f(int) { std::cout << "B::f\n"; }
+        void g(char)        { std::cout << "B::g\n"; }
+        void h(int)         { std::cout << "B::h\n"; }
+    protected:
+        int m; // B::m is protected
+        typedef int value_type;
+    };
+    
+    struct D : B
+    {
+        using B::m;          // D::m is public
+        using B::value_type; // D::value_type is public
+    
+        using B::f;
+        void f(int) { std::cout << "D::f\n"; } // D::f(int) overrides B::f(int)
+    
+        using B::g;
+        void g(int) { std::cout << "D::g\n"; } // both g(int) and g(char) are visible
+    
+        using B::h;
+        void h(int) { std::cout << "D::h\n"; } // D::h(int) hides B::h(int)
+    };
+    ```
+
+4. alias
+
+    the same effect as creating a type alias with `typedef`
+
+    ```c++
+    using I = int;
+    using A = int[100];
+    ```
 
 ## std
 
@@ -579,6 +491,20 @@ ForwardIterator upper_bound (ForwardIterator first, ForwardIterator last, const 
 bool binary_search (ForwardIterator first, ForwardIterator last, const T& val);// 返回是否存在
 ```
 
+### find
+
+```cpp
+InputIterator find (InputIterator first, InputIterator last, const T& val)
+```
+
+```c++
+std::vector<int> v{1, 2, 3, 4};
+auto is_even = [](int i){ return i % 2 == 0; };
+auto result1 = std::find(begin(v), end(v), n1);
+auto result2 = std::find(begin(v), end(v), n2);
+auto result3 = std::find_if(begin(v), end(v), is_even);
+```
+
 ## STL
 
 ### iterator
@@ -692,6 +618,8 @@ v.emplace_back({1, 2, 3});/*WRONG*/
 
 ### array
 
+array的大小必须是编译时常量。
+
 ```c++
 template <class T, size_t N> class array;
 at();
@@ -701,8 +629,6 @@ size();
 max_size();
 empty();
 ```
-
-
 
 ### stack
 
@@ -721,10 +647,10 @@ void pop();
 
 ```c++
 //构造函数e.g.
-queue<int> first;                 // empty queue
+queue<int> first;             // empty queue
 queue<int, list<int> > third; // empty queue with list as underlying container
-std::queue<int> second (mydeck);       //mydeck是deque<int>(3, 100)可以用deque初始化
-std::queue<int,std::list<int> > fourth (mylist); // mylist是list<int>用list初始化需设置container为list
+std::queue<int> second(mydeck);       //mydeck是deque<int>(3, 100)可以用deque初始化
+std::queue<int,std::list<int>> fourth(mylist); // mylist是list<int>用list初始化需设置container为list
 size_type size();
 bool empty();
 void push();
@@ -748,6 +674,17 @@ const_reference top() const;
 void push (const value_type& val);
 void push (value_type&& val);
 void pop();
+```
+
+#### 自定义比较函数
+
+```cpp
+class Compare {
+ public:
+  bool operator()(const ListNode *node1, const ListNode *node2) {
+    return node1->val > node2->val;
+  }
+};
 ```
 
 ## cctype

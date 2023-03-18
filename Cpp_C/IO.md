@@ -176,6 +176,7 @@ std::cout << v1 << " " << v2 << " " << var << std::endl;
 >
 > - 流运算符会保留里面的东西，所以如果你要用一个流对象格式化多个字符串，中间要使用`stringstream_instance.str(std::string())`or`stringstream_instance.str("")`
 > - space会帮你跳过，所以不用用一个char space来读入空格。
+> - use `myStream.rdbuf()->in_avail() == 0` to check if myStream is empty
 
 ### 二进制文件读写
 
