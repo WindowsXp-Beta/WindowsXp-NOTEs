@@ -40,13 +40,23 @@ Journey of my English learning.
 
   peach: 30+28+24+28=110
 
-<del>2021.2.26 Sat. 9:30 am. 西交利物浦GRE fighting！！！</del>
+<del>2022.2.26 Sat. 9:30 am. 西交利物浦GRE fighting！！！</del>
 
-<del>2021.4.3 上海中学</del>
+<del>2022.4.3 上海中学</del>
 
 > Thanks to covid-19(omicron to be specific)😇
 
-2021.7.24 上海中学 GRE fighting！！！
+<del>2022.7.24 上海中学 GRE fighting！！！</del>
+
+<del>2022.8.26 南京师范大学 GRE fighting！！！</del>
+
+2022.8.27 Microsoft Shanghai B01 GRE fighting😇😇😇
+
+> G152+Q169+AW4.0
+
+2022.9.23 南通教育技术中心 GRE fighting
+
+> G158+Q170+AW4.0 🍻
 
 ## vocabulary
 
@@ -57,3 +67,5 @@ Journey of my English learning.
 2021.9.6 5480（准备了一周多TOEFL，词汇量提升十分有限啊，但感觉阅读文章比之前看得懂了？可能是academic words背的比较多。。还是要保持每天刷quizlet啊）
 
 2021.10.13 5310 此处应有🤡。。。属于是给ETS送钱了。。。
+
+2022.8.12 5860 🤡🤡🤡

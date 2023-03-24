@@ -200,3 +200,13 @@ soft link其实新建立一个文件并存储文件路径（因此可以为一�
 - atime last access
 - mtime last modification 修改数据
 - ctime last change of inode 修改metadata
+
+# VFS
+
+> Virtual File System
+>
+> We use VFS(Virtual Filesystem Switch) in Linux to introduce this concept.
+
+## motivation
+
+计算机系统存在多种文件系统，不同文件系统在存储设备上使用不同的数据结构和方法。为了对上提供uniform接口，VFS定义了一系列**内存数据结构**。并要求底层不同文件系统提供指定的方法（实现相应的函数指针）
