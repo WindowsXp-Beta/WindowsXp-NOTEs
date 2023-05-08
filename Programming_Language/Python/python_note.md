@@ -158,16 +158,6 @@ print("hello",file=f)
 f.close()
 ```
 
-### exception handling
-
-```python
-try:
-    # some commands
-except (TypeError, ZeroDivisionError): # handle specific Error
-except Exception as e: # handle rest Error
-else: # if the code block inside the try can run without Error, else will be excuted
-```
-
 ### 执行系统指令
 
 1. os.system('$cmd')
@@ -176,10 +166,34 @@ else: # if the code block inside the try can run without Error, else will be exc
 
 2. subprocess
 
-### vscode中禁用一些报错
+### vscode
+
+#### 禁用报错
 
 1. [pyright](https://stackoverflow.com/questions/57335636/is-it-possible-to-ignore-pyright-checking-for-one-line)
 2. [pylint](https://stackoverflow.com/questions/25610009/how-to-comment-document-uses-of-pylint-in-line-options)
+
+#### 函数注释
+
+```python
+def gradients(output_node, node_list):
+    """Take gradient of output node with respect to each node in node_list.
+
+    Parameters
+    ----------
+    output_node: output node that we are taking derivative of.
+    node_list: list of nodes that we are taking derivative wrt.
+
+    Returns
+    -------
+    A list of gradient values, one for each node in node_list respectively.
+
+    """
+```
+
+效果：
+
+![](./note_img/vscode_fun_comment.png)
 
 ## 算符
 
@@ -237,9 +251,16 @@ int, float, complex(2+3j), str, bool
 
 float('inf')
 
+### string
+
+#### format
+
+1. `f'{v1} content {v2} content {v3}'`
+2. `{}.format()`
+
 ### tuple
 
-#### concatenate tuples
+#### concatenate
 
 ```python
 my_tuple_1 = (11, 14, 0, 78, 33, 11)
@@ -367,13 +388,6 @@ print(list(chain.from_iterable(a)))
 # [1, 2, 3, 4, 5]
 ```
 
-### string
-
-格式化字符串：
-
-1. `f'{v1} content {v2} content {v3}'`
-2. `{}.format()`
-
 ## 循环
 
 1. for
@@ -384,7 +398,7 @@ for it in list_variable:
 # 一次遍历两个元素
 it = iter(list_variable)
 for item in it:
-	print(item, next(it))
+    print(item, next(it))
 ```
 
 2. how to break nested loops in python
@@ -457,7 +471,15 @@ keyword arguments must be after position arguments.
 
 ### lambda表达式
 
+## exception handling
 
+```python
+try:
+    # some commands
+except (TypeError, ZeroDivisionError): # handle specific Error
+except Exception as e: # handle rest Error
+else: # if the code block inside the try can run without Error, else will be excuted
+```
 
 ## concurrency
 
@@ -514,6 +536,15 @@ how to check if an object it None, use `is` and `is not`. Because if you def you
 
 1. 如何定义一个field，它的值是基于其他field的: [post-init-processing](https://docs.python.org/3/library/dataclasses.html#post-init-processing)
 2. 定义一个immutable的class: [stackoverflow](https://stackoverflow.com/a/58992808/16598178)
+
+### dunder methods
+
+`__init__` vs `__call__`
+
+```python
+x = Foo() # would call Foo::__init__
+x(p1, p2, ...) # would call Foo::__call__
+```
 
 # Key word
 
