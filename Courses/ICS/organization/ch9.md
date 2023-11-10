@@ -52,7 +52,7 @@ Why we need Virtual Memory?
 
 - valid bit为1 则地址为这个页在主存中的地址。
 - valid bit为0 但页已经被分配，则地址为在disk中的地址。
-- valid bit为0且页未分配，则为null。
+- valid bit为0 且页未分配，则为null。
 
 ## Address translation
 
@@ -132,7 +132,7 @@ TLB是页表的一部分，每个进程的页表是不一样的，切换进程�
 
 当以4kb为粒度时，level 1的n是30。
 
-物理地址48位，level1是30\~38bit，所以0\~29bit都是offset，即取L2，L3，业内偏移合成大页的offset。
+物理地址48位，level1是30\~38bit，所以0\~29bit都是offset，即取L2，L3，offset合成大页的offset。
 
 所以输出的物理地址只要30\~48位
 
@@ -140,7 +140,13 @@ armv8的0，1，2级页表当页表项指向下一级页表时结构如下：
 
 <img src="./note_img/PTE_point2table.png" style="zoom:90%;" />
 
-以4kb为粒度时，m=12，因为根据CSAPP p578，与OS lab2的代码：`u64 boot_ttbr0_l0[PTP_ENTRIES] ALIGN(PTP_SIZE);// PTP_SIZE is 4096`,物理页表要求4kb对齐。所以0\~11页为0。
+以4kb为粒度时，m=12，因为根据CSAPP p578，与OS lab2的代码：`u64 boot_ttbr0_l0[PTP_ENTRIES] ALIGN(PTP_SIZE);// PTP_SIZE is 4096`,物理页表要求4kb对齐。所以0\~11位为0。
+
+L3 page table descriptor
+
+<img src="./note_img/EL3_pte.png" style="zoom:50%;" />
+
+
 
 ## Linux虚拟内存系统
 
@@ -161,17 +167,27 @@ e.g. 代码段，数据段，堆，共享库，用户栈
 
 ### memory mapping
 
-<img src="./note_img/mmap_two_ways.png" style="zoom:50%;" />
+<img src="./note_img/mmap_two_ways.png" style="zoom:60%;" />
 
 ### COW
 
 > COW stands for copy on write
 
+Private objects are mapped into virtual memory using a clever technique known as copy-on-write. A private object begins life in exactly the same way as a shared object, with only one copy of the private object stored in physical memory. For example, Figure 9.30(a) shows a case where two processes have mapped a private object into different areas of their virtual memories but share the same physical copy of the object. For each process that maps the private object, the page table entries for the corresponding private area are flagged as read-only, and the area struct is flagged as private copy-on-write. So long as neither process attempts to write to its respective private area, they continue to share a single copy of the object in physical memory. However, as soon as a process attempts to write to some page in the private area, the write triggers a protection fault.
+
+When the fault handler notices that the protection exception was caused by the process trying to write to a page in a private copy-on-write area, it creates a new copy of the page in physical memory, updates the page table entry to point to the new copy, and then restores write permissions to the page, as shown in Figure 9.30(b). When the fault handler returns, the CPU re-executes the write, which now proceeds normally on the newly created page.
+
 <img src="./note_img/cow_process.png" style="zoom:50%;" />
 
 ## page fault handler
 
-当发生page fault时，应该从磁盘上的哪里找到响应的数据填到内存里呢？
+> A major page fault is one that can only be satisfied by accessing the disk.
+>
+> A minor page fault can be satisfied by sharing pages that are already in memory. Note: Anonymous file also falls into this category. That's why `malloc` only cause minor page fault.
+>
+> You can use `ps -o min_flt,maj_flt #PID` to get minor/major page faults counts.
+
+当发生page fault时，应该从磁盘上的哪里找到相应的数据填到内存里呢？
 
 学ICS的时候，认为如果最后一级页表项如果是invalid的。那么就存着磁盘上的页表位置。实际上CSAPP上确实是这么画的：
 ![](./note_img/L3PTE.png)
@@ -226,6 +242,13 @@ struct pmobject {
 <img src="./note_img/heap.png" style="zoom:40%;" />
 
 操作系统为每个进程维护一个brk指向堆的顶部。
+
+How does C malloc?
+
+1. mmap a anonymous page.
+2. write some bookkeeping information.
+
+A good [post](https://stackoverflow.com/questions/66828363/why-does-malloc-cause-minor-page-fault) explaining this.
 
 ### C functions
 

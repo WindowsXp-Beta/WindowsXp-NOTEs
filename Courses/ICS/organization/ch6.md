@@ -53,7 +53,7 @@ tag的位数由后两个决定，set index表示该数据在cache memory的哪�
 
 1. 选择集合，通过读取set index位找到那个集合（行），检查valid位。
 2. 比较tag：比较tag和集合（行）的tag位。
-3. 找到起始位置：读取block set找到访问起始位置。
+3. 找到起始位置：读取block offset找到访问起始位置。
 
 #### 迁移block
 
@@ -147,7 +147,7 @@ A: 使用相同的步长不同的Size（沿着Stride轴切）。观察吞吐量d
 
 Q: 测试集大小大于L2 size小于L3的size时，主要的时间都消耗在L2和L3之间的迁移。为什么L1和L2的迁移不重要了？
 
-A: 因为顺序访问，当L1 miss的时候L2一定会miss。dry run使得数据在L3里，但L2和L1中的数据肯定是要被evict掉的。
+A: 因为顺序访问，dry run使得数据在L3里，但L2和L1中的数据肯定是要被evict掉的。当L1 miss的时候L2一定会miss。
 
 Q2: 测量L1 cache line的大小。
 

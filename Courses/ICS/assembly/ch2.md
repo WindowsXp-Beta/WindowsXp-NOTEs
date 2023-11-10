@@ -100,6 +100,8 @@ E:阶码:  对浮点数进行加权，权重为2的E次幂
 
 > 单精度、双精度浮点数的位级表示
 >
+> exp对应阶码E，frac对应尾数M
+>
 > <img src="./note_img/float_pre.png" style="zoom:60%">
 
 偏置Bias: $2^{k-1}-1$
