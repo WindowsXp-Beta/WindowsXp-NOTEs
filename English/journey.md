@@ -58,6 +58,10 @@ Journey of my English learning.
 
 > G158+Q170+AW4.0 🍻
 
+2022.x.xx 江西some university test center TOEFL
+
+> R30+L29+S23+W28=110 🍻
+
 ## vocabulary
 
 [测试网站](http://testyourvocab.com/)
@@ -69,3 +73,5 @@ Journey of my English learning.
 2021.10.13 5310 此处应有🤡。。。属于是给ETS送钱了。。。
 
 2022.8.12 5860 🤡🤡🤡
+
+2025.4.14 7058 after nearly two years stay in US...
